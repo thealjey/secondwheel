@@ -1,0 +1,51 @@
+{
+  "name": "webutilities",
+  "description": "unopinionated library of functions for those tired of reinventing the wheel",
+  "author": "Eugene Kuzmenko",
+  "license": "MIT",
+  "scripts": {
+    "test": "flow && standard *.js test/*.js && c8 --reporter=text --reporter=html mocha -b -R min test/*.js",
+    "docs": "documentation build *.js -f html -o docs",
+    "semantic-release": "semantic-release",
+    "travis-deploy-once": "travis-deploy-once",
+    "cz": "git-cz"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "yarn test && yarn docs && git add -A"
+    }
+  },
+  "standard": {
+    "ignore": [
+      "flow-typed"
+    ]
+  },
+  "dependencies": {
+    "lodash": "^4.17.11",
+    "marksy": "^6.1.0"
+  },
+  "devDependencies": {
+    "c8": "^3.2.1",
+    "commitizen": "^3.0.5",
+    "cz-conventional-changelog": "^2.1.0",
+    "documentation": "^8.1.2",
+    "flow-bin": "^0.87.0",
+    "husky": "^1.2.0",
+    "mocha": "^5.2.0",
+    "react": "^16.6.3",
+    "react-element-to-jsx-string": "^14.0.2",
+    "semantic-release": "^15.12.3",
+    "standard": "^12.0.1",
+    "travis-deploy-once": "^5.0.9"
+  },
+  "version": "0.0.0-development",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/thealjey/webutilities.git"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}
