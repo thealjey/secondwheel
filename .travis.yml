@@ -10,6 +10,7 @@ notifications:
   email: false
 node_js: lts/*
 after_success:
+  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - yarn travis-deploy-once "yarn semantic-release"
 branches:
   except:

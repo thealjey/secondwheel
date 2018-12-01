@@ -4,7 +4,7 @@
   "author": "Eugene Kuzmenko",
   "license": "MIT",
   "scripts": {
-    "test": "flow && standard *.js test/*.js && c8 --reporter=text --reporter=html mocha -b -R min test/*.js",
+    "test": "flow && standard *.js test/*.js && c8 --reporter=text --reporter=lcov mocha -b -R min test/*.js",
     "docs": "documentation build *.js -f html -o docs",
     "semantic-release": "semantic-release",
     "travis-deploy-once": "travis-deploy-once --pro",
@@ -27,6 +27,7 @@
   "devDependencies": {
     "c8": "^3.2.1",
     "commitizen": "^3.0.5",
+    "coveralls": "^3.0.2",
     "cz-conventional-changelog": "^2.1.0",
     "documentation": "^8.1.2",
     "flow-bin": "^0.87.0",
