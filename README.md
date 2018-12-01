@@ -1,6 +1,8 @@
 # webutilities
 unopinionated library of functions for those tired of reinventing the wheel
 
+[![Build Status](https://travis-ci.com/thealjey/webutilities.svg?branch=master)](https://travis-ci.com/thealjey/webutilities)
+
 ## Philosophy:
 1. use [Yarn](https://yarnpkg.com/en/) for everything
 1. tiny, reusable, pure, side effect free functions, following a single
