@@ -1,8 +1,8 @@
-# webutilities
+# secondwheel
 unopinionated library of functions for those tired of reinventing the wheel
 
-[![Build Status](https://travis-ci.com/thealjey/webutilities.svg?branch=master)](https://travis-ci.com/thealjey/webutilities)
-[![Coverage Status](https://coveralls.io/repos/github/thealjey/webutilities/badge.svg?branch=master)](https://coveralls.io/github/thealjey/webutilities?branch=master)
+[![Build Status](https://travis-ci.com/thealjey/secondwheel.svg?branch=master)](https://travis-ci.com/thealjey/secondwheel)
+[![Coverage Status](https://coveralls.io/repos/github/thealjey/secondwheel/badge.svg?branch=master)](https://coveralls.io/github/thealjey/secondwheel?branch=master)
 
 ## Philosophy:
 1. use [Yarn](https://yarnpkg.com/en/) for everything

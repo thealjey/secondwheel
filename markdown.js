@@ -17,7 +17,7 @@ const compileMarkdown = memoize(
  * compatible nodes
  *
  * @example
- * import template from 'webutilities/markdown'
+ * import template from 'secondwheel/markdown'
  *
  * // use with any HyperScript compatible framework
  * import { createElement as h } from 'react'

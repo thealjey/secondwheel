@@ -1,5 +1,5 @@
 {
-  "name": "webutilities",
+  "name": "secondwheel",
   "description": "unopinionated library of functions for those tired of reinventing the wheel",
   "author": "Eugene Kuzmenko",
   "license": "MIT",
@@ -42,7 +42,7 @@
   "version": "0.0.0-development",
   "repository": {
     "type": "git",
-    "url": "https://github.com/thealjey/webutilities.git"
+    "url": "https://github.com/thealjey/secondwheel.git"
   },
   "config": {
     "commitizen": {

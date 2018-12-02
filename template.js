@@ -13,7 +13,7 @@ const compileLodash = memoize(
  * which caches compiled templates in memory
  *
  * @example
- * import template from 'webutilities/template';
+ * import template from 'secondwheel/template';
  *
  * template('hello <%= name %>', { name: 'foo' })
  * template('hello <%= name %>', { name: 'bar' }) // only compiled once
