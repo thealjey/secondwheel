@@ -12,7 +12,7 @@ const compileMarkdown = memoize(createElement => marksy({ createElement }))
  * compatible nodes
  *
  * @example
- * import template from 'secondwheel/markdown'
+ * import markdown from 'secondwheel/markdown'
  *
  * // use with any HyperScript compatible framework
  * import { createElement as h } from 'react'
