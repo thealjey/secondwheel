@@ -3,9 +3,7 @@
 const memoize = require('lodash/memoize')
 const lodashTemplate = require('lodash/template')
 
-const compileLodash = memoize(
-  lodashTemplate
-)
+const compileLodash = memoize(lodashTemplate)
 
 /**
  * a wrapper around
@@ -21,7 +19,6 @@ const compileLodash = memoize(
 const template = (
   tpl/*: string */ = '',
   data/*: Object */ = {}
-)/*: string */ =>
-  compileLodash(tpl)(data)
+)/*: string */ => compileLodash(tpl)(data)
 
 module.exports = template

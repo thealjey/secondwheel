@@ -4,12 +4,7 @@ const memoize = require('lodash/memoize')
 const marksy = require('marksy').default
 const template = require('./template')
 
-const compileMarkdown = memoize(
-  (
-    createElement/*: Function */
-  ) =>
-    marksy({ createElement })
-)
+const compileMarkdown = memoize(createElement => marksy({ createElement }))
 
 /**
  * converts a markdown string to
@@ -30,7 +25,6 @@ const markdown = (
   h/*: Function */,
   tpl/*: string */ = '',
   data/*: Object */ = {}
-) =>
-  compileMarkdown(h)(template(tpl, data)).tree
+) => compileMarkdown(h)(template(tpl, data)).tree
 
 module.exports = markdown
