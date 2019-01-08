@@ -26,6 +26,64 @@
               
                 
                 <li><a
+                  href='#cookie'
+                  class=" toggle-sibling">
+                  cookie
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#cookiesetcookie'
+                        class='regular pre-open'>
+                        .setCookie
+                      </a></li>
+                    
+                      <li><a
+                        href='#cookiesetsessioncookie'
+                        class='regular pre-open'>
+                        .setSessionCookie
+                      </a></li>
+                    
+                      <li><a
+                        href='#cookiegetcookie'
+                        class='regular pre-open'>
+                        .getCookie
+                      </a></li>
+                    
+                      <li><a
+                        href='#cookieremovecookie'
+                        class='regular pre-open'>
+                        .removeCookie
+                      </a></li>
+                    
+                      <li><a
+                        href='#cookiesetreturnto'
+                        class='regular pre-open'>
+                        .setReturnTo
+                      </a></li>
+                    
+                      <li><a
+                        href='#cookiegetreturnto'
+                        class='regular pre-open'>
+                        .getReturnTo
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
                   href='#cookieoptions'
                   class="">
                   CookieOptions
@@ -36,69 +94,59 @@
               
                 
                 <li><a
-                  href='#setcookie'
-                  class="">
-                  setCookie
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#setsessioncookie'
-                  class="">
-                  setSessionCookie
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#getcookie'
-                  class="">
-                  getCookie
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#removecookie'
-                  class="">
-                  removeCookie
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#setreturnto'
-                  class="">
-                  setReturnTo
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#getreturnto'
-                  class="">
-                  getReturnTo
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#markdown'
                   class="">
                   markdown
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#subscription'
+                  class=" toggle-sibling">
+                  subscription
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#subscriptioncreated'
+                        class='regular pre-open'>
+                        .created
+                      </a></li>
+                    
+                      <li><a
+                        href='#subscriptionupdated'
+                        class='regular pre-open'>
+                        .updated
+                      </a></li>
+                    
+                      <li><a
+                        href='#subscriptiondeleted'
+                        class='regular pre-open'>
+                        .deleted
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
+                  href='#subscriptionpayload'
+                  class="">
+                  SubscriptionPayload
                   
                 </a>
                 
@@ -122,6 +170,538 @@
         </div>
       </div>
       <div id='split-right' class='relative overflow-auto height-viewport-100'>
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='cookie'>
+      cookie
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>tools for working with cookies</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>cookie</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='cookiesetcookie'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>setCookie</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>sets a cookie</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>setCookie</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>value</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { setCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
+
+setCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>)               <span class="hljs-comment">// browser</span>
+setCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='cookiesetsessioncookie'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>setSessionCookie</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>sets a session (temporary) cookie</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>setSessionCookie</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>value</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { setSessionCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
+
+setSessionCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>)               <span class="hljs-comment">// browser</span>
+setSessionCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='cookiegetcookie'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getCookie</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>retrieves a cookie by name</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getCookie</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { getCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
+
+<span class="hljs-keyword">const</span> cookieValue = getCookie(<span class="hljs-string">'cookie-name'</span>)               <span class="hljs-comment">// browser</span>
+<span class="hljs-keyword">const</span> cookieValue = getCookie(<span class="hljs-string">'cookie-name'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='cookieremovecookie'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>removeCookie</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>removes a cookie</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>removeCookie</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { removeCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
+
+removeCookie(<span class="hljs-string">'cookie-name'</span>)               <span class="hljs-comment">// browser</span>
+removeCookie(<span class="hljs-string">'cookie-name'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='cookiesetreturnto'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>setReturnTo</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>sets the "return to" value (current URL) into a session cookie</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>setReturnTo</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { setReturnTo } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
+
+setReturnTo()             <span class="hljs-comment">// browser</span>
+setReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='cookiegetreturnto'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>getReturnTo</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>returns and removes the "return to" value</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>getReturnTo</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { getReturnTo } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
+
+<span class="hljs-keyword">const</span> cookieValue = getReturnTo()             <span class="hljs-comment">// browser</span>
+<span class="hljs-keyword">const</span> cookieValue = getReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
         
           
           <section class='p2 mb2 clearfix bg-white minishadow'>
@@ -237,484 +817,6 @@
   
   <div class='clearfix'>
     
-    <h3 class='fl m0' id='setcookie'>
-      setCookie
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>sets a cookie</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>setCookie</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>value</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { setCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-setCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>)               <span class="hljs-comment">// browser</span>
-setCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='setsessioncookie'>
-      setSessionCookie
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>sets a session (temporary) cookie</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>setSessionCookie</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>value</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { setSessionCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-setSessionCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>)               <span class="hljs-comment">// browser</span>
-setSessionCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='getcookie'>
-      getCookie
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>retrieves a cookie by name</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>getCookie</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { getCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-<span class="hljs-keyword">const</span> cookieValue = getCookie(<span class="hljs-string">'cookie-name'</span>)               <span class="hljs-comment">// browser</span>
-<span class="hljs-keyword">const</span> cookieValue = getCookie(<span class="hljs-string">'cookie-name'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='removecookie'>
-      removeCookie
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>removes a cookie</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>removeCookie</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { removeCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-removeCookie(<span class="hljs-string">'cookie-name'</span>)               <span class="hljs-comment">// browser</span>
-removeCookie(<span class="hljs-string">'cookie-name'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='setreturnto'>
-      setReturnTo
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>sets the "return to" value (current URL) into a session cookie</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>setReturnTo</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { setReturnTo } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-setReturnTo()             <span class="hljs-comment">// browser</span>
-setReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='getreturnto'>
-      getReturnTo
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>returns and removes the "return to" value</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>getReturnTo</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { getReturnTo } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-<span class="hljs-keyword">const</span> cookieValue = getReturnTo()             <span class="hljs-comment">// browser</span>
-<span class="hljs-keyword">const</span> cookieValue = getReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
     <h3 class='fl m0' id='markdown'>
       markdown
     </h3>
@@ -809,6 +911,402 @@ markdown(h, <span class="hljs-string">'hello &lt;%= name %&gt;'</span>, { <span 
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='subscription'>
+      subscription
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>tools for working with GraphQL subscriptions</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>subscription</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='subscriptioncreated'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>created</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>updates object to reflect created nodes at path</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>created</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>result</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>path</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>payload</span> <code class='quiet'>(<a href="#subscriptionpayload">SubscriptionPayload</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { created } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/subscription'</span>
+
+<span class="hljs-keyword">const</span> newData = created(data, <span class="hljs-string">'path.to.nested.list'</span>, payload)</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='subscriptionupdated'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>updated</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>updates object to reflect updated nodes at path</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>updated</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>result</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>path</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>payload</span> <code class='quiet'>(<a href="#subscriptionpayload">SubscriptionPayload</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { updated } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/subscription'</span>
+
+<span class="hljs-keyword">const</span> newData = updated(data, <span class="hljs-string">'path'</span>, payload)</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='subscriptiondeleted'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>deleted</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>updates object to reflect deleted nodes at path</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>deleted</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>result</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>path</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>payload</span> <code class='quiet'>(<a href="#subscriptionpayload">SubscriptionPayload</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { deleted } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/subscription'</span>
+
+<span class="hljs-keyword">const</span> newData = deleted(data, <span class="hljs-string">'path'</span>, payload)</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='subscriptionpayload'>
+      SubscriptionPayload
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>subscription payload</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>SubscriptionPayload</div>
+   
+  
+    <p>
+      Type:
+      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+    </p>
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Properties</div>
+    <div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>mutation</span> <code class='quiet'>((<code>"CREATED"</code> | <code>"UPDATED"</code> | <code>"DELETED"</code>))</code>
+          : type of change
+
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <span class='code bold'>node</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>))</code>
+          : object(s) with an "id" property
+
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='template'>
       template
     </h3>
@@ -875,7 +1373,7 @@ which caches compiled templates in memory</p>
     <div class='py1 quiet mt1 prose-big'>Example</div>
     
       
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> template <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/template'</span>;
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> template <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/template'</span>
 
 template(<span class="hljs-string">'hello &lt;%= name %&gt;'</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">'foo'</span> })
 template(<span class="hljs-string">'hello &lt;%= name %&gt;'</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">'bar'</span> }) <span class="hljs-comment">// only compiled once</span></pre>

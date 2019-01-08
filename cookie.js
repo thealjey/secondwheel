@@ -5,6 +5,11 @@ const kebabCase = require('lodash/kebabCase')
 const get = require('lodash/get')
 
 /**
+ * tools for working with cookies
+ * @namespace cookie
+ */
+
+/**
  * cookie options
  *
  * @typedef {Object} CookieOptions
@@ -30,7 +35,7 @@ const getConfig = (options/*: ?CookieOptions */)/*: CookieOptions */ => {
 
 const serialize = (options/*: ?CookieOptions */)/*: string */ => reduce(
   options,
-  (result, value, key) => `${result}${kebabCase(key)}=${value};`,
+  (result, value, key) => `${result}${kebabCase(String(key))}=${value};`,
   ''
 )
 
@@ -52,6 +57,7 @@ function set (
 /**
  * sets a cookie
  *
+ * @memberof cookie
  * @example
  * import { setCookie } from 'secondwheel/cookie'
  *
@@ -69,6 +75,7 @@ exports.setCookie = setCookie
 /**
  * sets a session (temporary) cookie
  *
+ * @memberof cookie
  * @example
  * import { setSessionCookie } from 'secondwheel/cookie'
  *
@@ -86,6 +93,7 @@ exports.setSessionCookie = setSessionCookie
 /**
  * retrieves a cookie by name
  *
+ * @memberof cookie
  * @example
  * import { getCookie } from 'secondwheel/cookie'
  *
@@ -111,6 +119,7 @@ exports.getCookie = getCookie
 /**
  * removes a cookie
  *
+ * @memberof cookie
  * @example
  * import { removeCookie } from 'secondwheel/cookie'
  *
@@ -136,6 +145,7 @@ exports.removeCookie = removeCookie
 /**
  * sets the "return to" value (current URL) into a session cookie
  *
+ * @memberof cookie
  * @example
  * import { setReturnTo } from 'secondwheel/cookie'
  *
@@ -153,6 +163,7 @@ exports.setReturnTo = setReturnTo
 /**
  * returns and removes the "return to" value
  *
+ * @memberof cookie
  * @example
  * import { getReturnTo } from 'secondwheel/cookie'
  *

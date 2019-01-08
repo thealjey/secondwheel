@@ -5,7 +5,7 @@ const { strictEqual, ok } = require('assert')
 const sinon = require('sinon')
 const cookie = require('../cookie')
 
-describe('markdown', () => {
+describe('cookie', () => {
   it('setCookie server', () => {
     const spy = sinon.spy()
 
