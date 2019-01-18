@@ -104,6 +104,16 @@
               
                 
                 <li><a
+                  href='#reactshallowstrictequal'
+                  class="">
+                  reactShallowStrictEqual
+                  
+                </a>
+                
+                </li>
+              
+                
+                <li><a
                   href='#subscription'
                   class=" toggle-sibling">
                   subscription
@@ -894,6 +904,121 @@ compatible nodes</p>
 <span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'inferno-hyperscript'</span>
 
 markdown(h, <span class="hljs-string">'hello &lt;%= name %&gt;'</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">'foo'</span> }) <span class="hljs-comment">// &lt;p&gt;hello foo&lt;/p&gt;</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='reactshallowstrictequal'>
+      reactShallowStrictEqual
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>a unit testing helper for React components</p>
+<p>performs a <strong>shallow</strong> render of <code>actual</code> and compares the result to
+<code>expected</code></p>
+<p>uses the native Node.js
+<a href="https://nodejs.org/api/assert.html#assert_assert_strictequal_actual_expected_message">assert.strictEqual</a>
+to perform the assertion</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>reactShallowStrictEqual</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>actual</span> <code class='quiet'>(ReactNode)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>expected</span> <code class='quiet'>(ReactNode)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>message</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Throws</div>
+    <ul>
+      
+        <li>AssertionError: test failure
+</li>
+      
+    </ul>
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// MyButton.js</span>
+<span class="hljs-keyword">import</span> classNames <span class="hljs-keyword">from</span> <span class="hljs-string">'classnames'</span>
+
+<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> ({children, className, ...props}) =&gt; (
+  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{classNames(</span>'<span class="hljs-attr">my-button</span>', <span class="hljs-attr">className</span>)} {<span class="hljs-attr">...props</span>}&gt;</span>{children}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
+)</pre>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// MyButton.test.js</span>
+<span class="hljs-keyword">import</span> reactShallowStrictEqual <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/reactShallowStrictEqual'</span>
+<span class="hljs-keyword">import</span> MyButton <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyButton'</span>
+
+describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
+  it(<span class="hljs-string">'should render predictable result'</span>, () =&gt; {
+    reactShallowStrictEqual(
+      (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyButton</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"test-class"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"test-id"</span>&gt;</span>test children<span class="hljs-tag">&lt;/<span class="hljs-name">MyButton</span>&gt;</span></span>),
+      (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"my-button test-class"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"test-id"</span>&gt;</span>test children<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>)
+    )
+  })
+})</pre>
     
   
 
