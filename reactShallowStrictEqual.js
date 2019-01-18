@@ -4,8 +4,6 @@ const { strictEqual } = require('assert')
 const ShallowRenderer = require('react-test-renderer/shallow')
 const reactElementToJSXString = require('react-element-to-jsx-string')
 
-const renderer = new ShallowRenderer()
-
 /**
  * a unit testing helper for React components
  *
@@ -46,6 +44,8 @@ const reactShallowStrictEqual = (
   expected/*: any */,
   message/*:: ?:string */
 ) => {
+  const renderer = new ShallowRenderer()
+
   renderer.render(actual)
 
   strictEqual(
