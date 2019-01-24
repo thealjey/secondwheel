@@ -1,9 +1,9 @@
 [ignore]
-.*/.history/*
-.*/.vscode/*
-.*/coverage/*
-.*/docs/*
-.*/node_modules/*
+.history/*
+.vscode/*
+coverage/*
+docs/*
+.*/node_modules/.*/\(lib\|test\).*\.json$
 
 [include]
 
@@ -13,9 +13,11 @@
 all=error
 unclear-type=off
 inexact-spread=off
+untyped-import=off
 
 [options]
 experimental.const_params=true
 suppress_comment=.*@flowignore.*
+suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
 
 [strict]

@@ -1,6 +1,6 @@
 /* @flow */
-/* eslint-env mocha */
 
+const { describe, it } = require('mocha')
 const { createElement } = require('react')
 const reactShallowStrictEqual = require('../reactShallowStrictEqual')
 const classNames = require('classnames')

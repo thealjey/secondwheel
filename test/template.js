@@ -1,6 +1,6 @@
 /* @flow */
-/* eslint-env mocha */
 
+const { describe, it } = require('mocha')
 const { strictEqual } = require('assert')
 const template = require('../template')
 

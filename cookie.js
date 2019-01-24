@@ -23,7 +23,7 @@ const get = require('lodash/get')
  * @property {Response} [res] - response object (must be privided server side)
  */
 /*::
-declare type CookieOptions = {
+type CookieOptions = {
   domain?: string;
   expires?: string;
   httpOnly?: boolean;

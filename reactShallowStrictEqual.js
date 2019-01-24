@@ -49,7 +49,9 @@ const reactShallowStrictEqual = (
   renderer.render(actual)
 
   strictEqual(
+    /* @flowignore */
     reactElementToJSXString(renderer.getRenderOutput()),
+    /* @flowignore */
     reactElementToJSXString(expected),
     message
   )

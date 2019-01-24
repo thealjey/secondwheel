@@ -1,6 +1,6 @@
 /* @flow */
-/* eslint-env mocha */
 
+const { describe, it } = require('mocha')
 const { strictEqual, ok } = require('assert')
 const sinon = require('sinon')
 const cookie = require('../cookie')

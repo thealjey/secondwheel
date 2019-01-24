@@ -1,6 +1,6 @@
 /* @flow */
-/* eslint-env mocha */
 
+const { describe, it } = require('mocha')
 const { deepStrictEqual } = require('assert')
 const subscription = require('../subscription')
 
