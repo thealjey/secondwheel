@@ -9,9 +9,14 @@ git:
   submodules: false
 notifications:
   email: false
+before_install: mkdir -p ~/$TRAVIS_BUILD_NUMBER
 jobs:
   include:
-    - script: yarn test
+    - script:
+      - yarn test
+      - cp ./coverage/lcov.info ~/$TRAVIS_BUILD_NUMBER/lcov.info
     - stage: deploy
-      script: cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-    - script: yarn semantic-release
+      name: Coverage
+      script: cat ~/$TRAVIS_BUILD_NUMBER/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+    - name: Release
+      script: yarn semantic-release
