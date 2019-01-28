@@ -16,18 +16,18 @@ const tail = require('lodash/tail')
 
 /**
  * tools for working with GraphQL subscriptions
+ *
+ * works with `Payload` defined as
+ * ```js
+ * export type Payload = {
+ *   mutation: 'CREATED' | 'UPDATED' | 'DELETED';
+ *   node: Object | Object[];
+ * }
+ * ```
  * @namespace subscription
  */
-
-/**
- * subscription payload
- *
- * @typedef {Object} SubscriptionPayload
- * @property {'CREATED' | 'UPDATED' | 'DELETED'} mutation - type of change
- * @property {Object | Object[]} node - object(s) with an "id" property
- */
 /*::
-type SubscriptionPayload = {
+export type Payload = {
   mutation: 'CREATED' | 'UPDATED' | 'DELETED';
   node: Object | Object[];
 }
@@ -86,7 +86,7 @@ const updateList = (
 const created = (
   result/*: Object */,
   path/*: string */,
-  payload/*: SubscriptionPayload */
+  payload/*: Payload */
 )/*: Object */ =>
   payload.mutation === 'CREATED'
     ? updateList(result, path, arr => concat(arr, payload.node))
@@ -106,7 +106,7 @@ exports.created = created
 const updated = (
   result/*: Object */,
   path/*: string */,
-  payload/*: SubscriptionPayload */
+  payload/*: Payload */
 )/*: Object */ => {
   let clone
 
@@ -134,7 +134,7 @@ exports.updated = updated
 const deleted = (
   result/*: Object */,
   path/*: string */,
-  payload/*: SubscriptionPayload */
+  payload/*: Payload */
 )/*: Object */ => {
   let ids
 

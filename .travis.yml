@@ -1,4 +1,5 @@
 language: node_js
+node_js: node
 cache:
   yarn: true
   directories:
@@ -8,10 +9,9 @@ git:
   submodules: false
 notifications:
   email: false
-node_js: lts/*
-after_success:
-  - cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-  - yarn travis-deploy-once "yarn semantic-release"
-branches:
-  except:
-    - /^v\d+\.\d+\.\d+$/
+jobs:
+  include:
+    - script: yarn test
+    - stage: deploy
+      script: cat ./coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
+    - script: yarn semantic-release

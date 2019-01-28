@@ -3,51 +3,38 @@
 const reduce = require('lodash/reduce')
 const kebabCase = require('lodash/kebabCase')
 const get = require('lodash/get')
+const isDate = require('lodash/isDate')
 
 /**
  * tools for working with cookies
+ *
+ * #### Types
+ * ```js
+ * import type { CookieOptions, $Response, $Request } from 'express'
+ *
+ * export type Options = {
+  *   req?: $Request;
+  *   res?: $Response;
+  *   ...$Exact<CookieOptions>;
+ * }
+ * ```
+ *
  * @namespace cookie
  */
 
-/**
- * cookie options
- *
- * @typedef {Object} CookieOptions
- * @property {string}   [path]
- * @property {string}   [domain]
- * @property {number}   [maxAge]
- * @property {string}   [expires]
- * @property {boolean}  [secure]
- * @property {boolean}  [httpOnly]
- * @property {Request}  [req] - request object (must be privided server side)
- * @property {Response} [res] - response object (must be privided server side)
- */
 /*::
-type CookieOptions = {
-  domain?: string;
-  expires?: string;
-  httpOnly?: boolean;
-  maxAge?: number;
-  path?: string;
-  secure?: boolean;
-  signed?: boolean;
-  req?: Request;
-  res?: Response;
-};
-declare class Request {
-  hostname: string;
-  originalUrl: string;
-  cookies: Object;
-  signedCookies: Object;
-}
-declare class Response {
-  cookie(name: string, value: string | Object,
-    options?: CookieOptions): Response;
-  clearCookie(name: string, options?: CookieOptions): Response;
+import type { CookieOptions, $Response, $Request } from 'express'
+
+export type Options = {
+  req?: $Request;
+  res?: $Response;
+  ...$Exact<CookieOptions>;
 }
 */
 
-const getConfig = (options/*: ?CookieOptions */)/*: CookieOptions */ => {
+const expires = new Date(0)
+
+const getConfig = (options/*: ?Options */)/*: Options */ => {
   const { req, res, ...rest } = options || {}
 
   return {
@@ -57,16 +44,17 @@ const getConfig = (options/*: ?CookieOptions */)/*: CookieOptions */ => {
   }
 }
 
-const serialize = (options/*: ?CookieOptions */)/*: string */ => reduce(
+const serialize = (options/*: ?Options */)/*: string */ => reduce(
   options,
-  (result, value, key) => `${result}${kebabCase(String(key))}=${value};`,
+  (result, value, key) =>
+    `${result}${kebabCase(String(key))}=${isDate(value) ? value.toUTCString() : value};`,
   ''
 )
 
 function set (
   name/*: string */,
   value/*: string */,
-  options/*: ?CookieOptions */
+  options/*: ?Options */
 ) {
   const res = get(options, 'res')
   const config = getConfig(options)
@@ -91,7 +79,7 @@ function set (
 const setCookie = (
   name/*: string */,
   value/*: string */,
-  options/*: ?CookieOptions */
+  options/*: ?Options */
 ) => set(name, value, { maxAge: 10 ** 10, ...options })
 
 exports.setCookie = setCookie
@@ -109,7 +97,7 @@ exports.setCookie = setCookie
 const setSessionCookie = (
   name/*: string */,
   value/*: string */,
-  options/*: ?CookieOptions */
+  options/*: ?Options */
 ) => set(name, value, options)
 
 exports.setSessionCookie = setSessionCookie
@@ -126,7 +114,7 @@ exports.setSessionCookie = setSessionCookie
  */
 const getCookie = (
   name/*: string */,
-  options/*: ?CookieOptions */
+  options/*: ?Options */
 )/*: string */ => {
   const req = get(options, 'req')
   let match
@@ -150,12 +138,9 @@ exports.getCookie = getCookie
  * removeCookie('cookie-name')               // browser
  * removeCookie('cookie-name', { req, res }) // server
  */
-const removeCookie = (name/*: string */, options/*: ?CookieOptions */) => {
+const removeCookie = (name/*: string */, options/*: ?Options */) => {
   const res = get(options, 'res')
-  const config = getConfig({
-    expires: 'Thu, 01 Jan 1970 00:00:00 UTC',
-    ...options
-  })
+  const config = getConfig({ expires, ...options })
 
   if (res) {
     res.clearCookie(name, config)
@@ -176,7 +161,7 @@ exports.removeCookie = removeCookie
  * setReturnTo()             // browser
  * setReturnTo({ req, res }) // server
  */
-const setReturnTo = (options/*: ?CookieOptions */) => exports.setSessionCookie(
+const setReturnTo = (options/*: ?Options */) => exports.setSessionCookie(
   'return-to',
   get(options, 'req.originalUrl') || window.location.href,
   options
@@ -194,7 +179,7 @@ exports.setReturnTo = setReturnTo
  * const cookieValue = getReturnTo()             // browser
  * const cookieValue = getReturnTo({ req, res }) // server
  */
-const getReturnTo = (options/*: ?CookieOptions */)/*: string */ => {
+const getReturnTo = (options/*: ?Options */)/*: string */ => {
   const value = getCookie('return-to', options)
 
   removeCookie('return-to', options)

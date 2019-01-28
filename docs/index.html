@@ -84,16 +84,6 @@
               
                 
                 <li><a
-                  href='#cookieoptions'
-                  class="">
-                  CookieOptions
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#markdown'
                   class="">
                   markdown
@@ -154,16 +144,6 @@
               
                 
                 <li><a
-                  href='#subscriptionpayload'
-                  class="">
-                  SubscriptionPayload
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
                   href='#template'
                   class="">
                   template
@@ -196,6 +176,14 @@
   
 
   <p>tools for working with cookies</p>
+<h4>Types</h4>
+<pre class='hljs'><span class="hljs-keyword">import</span> type { CookieOptions, $Response, $Request } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>
+
+<span class="hljs-keyword">export</span> type Options = {
+  req?: $Request;
+  res?: $Response;
+  ...$Exact&lt;CookieOptions&gt;;
+}</pre>
 
  
   
@@ -275,7 +263,7 @@
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
 	    
           </div>
           
@@ -361,7 +349,7 @@ setCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-stri
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
 	    
           </div>
           
@@ -439,7 +427,7 @@ setSessionCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hl
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
 	    
           </div>
           
@@ -522,7 +510,7 @@ setSessionCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hl
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
 	    
           </div>
           
@@ -592,7 +580,7 @@ removeCookie(<span class="hljs-string">'cookie-name'</span>, { req, res }) <span
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
 	    
           </div>
           
@@ -662,7 +650,7 @@ setReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>options</span> <code class='quiet'>(<a href="#cookieoptions">CookieOptions</a>?)</code>
+            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
 	    
           </div>
           
@@ -704,114 +692,6 @@ setReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
     </div>
   
 </div>
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='cookieoptions'>
-      CookieOptions
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>cookie options</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>CookieOptions</div>
-   
-  
-    <p>
-      Type:
-      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-    </p>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Properties</div>
-    <div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>path</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>domain</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>maxAge</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Number">number</a>?)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>expires</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>secure</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>httpOnly</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean">boolean</a>?)</code>
-          
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>req</span> <code class='quiet'>(<a href="https://developer.mozilla.org/Add-ons/SDK/High-Level_APIs/request">Request</a>?)</code>
-          : request object (must be privided server side)
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>res</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/Guide/HTML/HTML5">Response</a>?)</code>
-          : response object (must be privided server side)
-
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
 
   
 
@@ -1045,6 +925,11 @@ describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
   
 
   <p>tools for working with GraphQL subscriptions</p>
+<p>works with <code>Payload</code> defined as</p>
+<pre class='hljs'><span class="hljs-keyword">export</span> type Payload = {
+  <span class="hljs-attr">mutation</span>: <span class="hljs-string">'CREATED'</span> | <span class="hljs-string">'UPDATED'</span> | <span class="hljs-string">'DELETED'</span>;
+  node: <span class="hljs-built_in">Object</span> | <span class="hljs-built_in">Object</span>[];
+}</pre>
 
  
   
@@ -1124,7 +1009,7 @@ describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>payload</span> <code class='quiet'>(<a href="#subscriptionpayload">SubscriptionPayload</a>)</code>
+            <span class='code bold'>payload</span> <code class='quiet'>(Payload)</code>
 	    
           </div>
           
@@ -1214,7 +1099,7 @@ describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>payload</span> <code class='quiet'>(<a href="#subscriptionpayload">SubscriptionPayload</a>)</code>
+            <span class='code bold'>payload</span> <code class='quiet'>(Payload)</code>
 	    
           </div>
           
@@ -1304,7 +1189,7 @@ describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
       
         <div class='space-bottom0'>
           <div>
-            <span class='code bold'>payload</span> <code class='quiet'>(<a href="#subscriptionpayload">SubscriptionPayload</a>)</code>
+            <span class='code bold'>payload</span> <code class='quiet'>(Payload)</code>
 	    
           </div>
           
@@ -1345,78 +1230,6 @@ describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
     </div>
   
 </div>
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='subscriptionpayload'>
-      SubscriptionPayload
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>subscription payload</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>SubscriptionPayload</div>
-   
-  
-    <p>
-      Type:
-      <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-    </p>
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Properties</div>
-    <div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>mutation</span> <code class='quiet'>((<code>"CREATED"</code> | <code>"UPDATED"</code> | <code>"DELETED"</code>))</code>
-          : type of change
-
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <span class='code bold'>node</span> <code class='quiet'>((<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>>))</code>
-          : object(s) with an "id" property
-
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
 
   
 

@@ -87,7 +87,7 @@ describe('cookie', () => {
       res: { clearCookie: spy }
     })
     ok(spy.calledWithMatch('cookie-name', {
-      expires: 'Thu, 01 Jan 1970 00:00:00 UTC'
+      expires: new Date(0)
     }))
   })
 
@@ -99,7 +99,7 @@ describe('cookie', () => {
     cookie.removeCookie('cookie-name')
     strictEqual(
       global.document.cookie,
-      'cookie-name=;path=/;domain=.clienthost;expires=Thu, 01 Jan 1970 00:00:00 UTC;'
+      'cookie-name=;path=/;domain=.clienthost;expires=Thu, 01 Jan 1970 00:00:00 GMT;'
     )
   })
 

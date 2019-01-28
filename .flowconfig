@@ -5,19 +5,7 @@ coverage/*
 docs/*
 .*/node_modules/.*/\(lib\|test\).*\.json$
 
-[include]
-
-[libs]
-
-[lints]
-all=error
-unclear-type=off
-inexact-spread=off
-untyped-import=off
-
 [options]
 experimental.const_params=true
 suppress_comment=.*@flowignore.*
 suppress_comment=\\(.\\|\n\\)*\\$FlowFixMe
-
-[strict]
