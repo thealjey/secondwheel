@@ -5,7 +5,7 @@
   "license": "MIT",
   "scripts": {
     "test": "flow && standard *.js test/*.js && c8 --reporter=text --reporter=lcov mocha --recursive -b -R min --exit",
-    "docs": "documentation build *.js -f html -o docs",
+    "docs": "documentation build *.js -g -f html -o docs",
     "semantic-release": "semantic-release",
     "cz": "git-cz"
   },
@@ -48,6 +48,7 @@
     "type": "git",
     "url": "https://github.com/thealjey/secondwheel.git"
   },
+  "homepage": "https://thealjey.github.io/secondwheel/",
   "config": {
     "commitizen": {
       "path": "./node_modules/cz-conventional-changelog"
