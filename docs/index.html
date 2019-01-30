@@ -84,6 +84,46 @@
               
                 
                 <li><a
+                  href='#jsx'
+                  class=" toggle-sibling">
+                  jsx
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#jsxarraytojsx'
+                        class='regular pre-open'>
+                        .arrayToJSX
+                      </a></li>
+                    
+                      <li><a
+                        href='#jsxhtmltoarray'
+                        class='regular pre-open'>
+                        .htmlToArray
+                      </a></li>
+                    
+                      <li><a
+                        href='#jsxhtmltojsx'
+                        class='regular pre-open'>
+                        .htmlToJSX
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
                   href='#markdown'
                   class="">
                   markdown
@@ -678,6 +718,326 @@ setReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
 
 <span class="hljs-keyword">const</span> cookieValue = getReturnTo()             <span class="hljs-comment">// browser</span>
 <span class="hljs-keyword">const</span> cookieValue = getReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    <h3 class='fl m0' id='jsx'>
+      jsx
+    </h3>
+    
+    
+  </div>
+  
+
+  <p>tools for working with jsx</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>jsx</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='jsxarraytojsx'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>arrayToJSX</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>converts an array of objects and strings to
+<a href="https://github.com/hyperhype/hyperscript">HyperScript</a>
+compatible nodes</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>arrayToJSX</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>h</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>arr</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)>
+            = <code>[]</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { arrayToJSX } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/jsx'</span>
+
+<span class="hljs-comment">// use with any HyperScript compatible framework</span>
+<span class="hljs-keyword">import</span> { createElement <span class="hljs-keyword">as</span> h } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'preact'</span>
+<span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'inferno-hyperscript'</span>
+
+<span class="hljs-comment">// render dynamic content without `dangerouslySetInnerHTML`</span>
+(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{arrayToJSX(h, <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">of</span> <span class="hljs-attr">htmlToArray</span>&gt;</span>)}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>)</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='jsxhtmltoarray'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>htmlToArray</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>converts an html string to an array of plain objects and strings</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>htmlToArray</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>tpl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;&#39;</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+    
+      <div class='py1 quiet mt1 prose-big'>Returns</div>
+      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)></code>
+    
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { htmlToArray } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/jsx'</span>
+
+<span class="hljs-comment">// stringify to transmit over the network, cache, etc.</span>
+<span class="hljs-keyword">const</span> str = <span class="hljs-built_in">JSON</span>.stringify(htmlToArray(<span class="hljs-string">'&lt;b&gt;hello &lt;%= name %&gt;&lt;/b&gt;'</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">'foo'</span> }))</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='jsxhtmltojsx'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>htmlToJSX</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+
+  <p>converts an html string to
+<a href="https://github.com/hyperhype/hyperscript">HyperScript</a>
+compatible nodes</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>htmlToJSX</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Parameters</div>
+    <div class='prose'>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>h</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>tpl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+            = <code>&#39;&#39;</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+        <div class='space-bottom0'>
+          <div>
+            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+            = <code>{}</code>)</code>
+	    
+          </div>
+          
+        </div>
+      
+    </div>
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { htmlToJSX } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/jsx'</span>
+
+<span class="hljs-comment">// use with any HyperScript compatible framework</span>
+<span class="hljs-keyword">import</span> { createElement <span class="hljs-keyword">as</span> h } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
+<span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'preact'</span>
+<span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'inferno-hyperscript'</span>
+
+<span class="hljs-comment">// bold text without `dangerouslySetInnerHTML`</span>
+(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{htmlToJSX(h, '<span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>hello <span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">name</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>', { name: 'foo' })}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>)</pre>
     
   
 

@@ -1,10 +1,11 @@
 /* @flow */
 
 const memoize = require('lodash/memoize')
-const marksy = require('marksy').default
+const marked = require('marked')
 const template = require('./template')
+const { htmlToJSX } = require('./jsx')
 
-const compileMarkdown = memoize(createElement => marksy({ createElement }))
+const compileMarkdown = memoize(marked)
 
 /**
  * converts a markdown string to
@@ -25,6 +26,6 @@ const markdown = (
   h/*: Function */,
   tpl/*: string */ = '',
   data/*: Object */ = {}
-) => compileMarkdown(h)(template(tpl, data)).tree
+) => htmlToJSX(h, compileMarkdown(template(tpl, data)))
 
 module.exports = markdown

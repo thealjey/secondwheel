@@ -22,8 +22,9 @@
     }
   },
   "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
     "lodash": "^4.17.11",
-    "marksy": "^6.1.0",
+    "marked": "^0.6.0",
     "react-element-to-jsx-string": "^14.0.2",
     "react-test-renderer": "^16.7.0"
   },
