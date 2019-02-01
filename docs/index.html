@@ -26,6 +26,46 @@
               
                 
                 <li><a
+                  href='#constants'
+                  class=" toggle-sibling">
+                  constants
+                  <span class='icon'>▸</span>
+                </a>
+                
+                <div class='toggle-target display-none'>
+                  
+                  <ul class='list-reset py1-ul pl1'>
+                    <li class='h5'><span>Static members</span></li>
+                    
+                      <li><a
+                        href='#constantsisnode'
+                        class='regular pre-open'>
+                        .isNode
+                      </a></li>
+                    
+                      <li><a
+                        href='#constantsisbrowser'
+                        class='regular pre-open'>
+                        .isBrowser
+                      </a></li>
+                    
+                      <li><a
+                        href='#constantsnativewebsocket'
+                        class='regular pre-open'>
+                        .NativeWebSocket
+                      </a></li>
+                    
+                    </ul>
+                  
+                  
+                  
+                  
+                </div>
+                
+                </li>
+              
+                
+                <li><a
                   href='#cookie'
                   class=" toggle-sibling">
                   cookie
@@ -207,12 +247,270 @@
   
   <div class='clearfix'>
     
+    <h3 class='fl m0' id='constants'>
+      constants
+    </h3>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/constants.js#L7-L9'>
+      <span>constants.js</span>
+      </a>
+    
+  </div>
+  
+
+  
+ 
+  
+    <div class='pre p1 fill-light mt0'>constants</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Static Members</div>
+    <div class="clearfix">
+  
+    <div class='border-bottom' id='constantsisnode'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>isNode</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/constants.js#L24-L24'>
+      <span>constants.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>truthy when running in Node.js</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>isNode</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { isNode } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/constants'</span>
+
+<span class="hljs-keyword">if</span> (isNode) {
+  <span class="hljs-comment">// Node.js</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// not Node.js</span>
+}</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='constantsisbrowser'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>isBrowser</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/constants.js#L39-L39'>
+      <span>constants.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>truthy when running in a browser</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>isBrowser</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { isBrowser } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/constants'</span>
+
+<span class="hljs-keyword">if</span> (isBrowser) {
+  <span class="hljs-comment">// browser</span>
+} <span class="hljs-keyword">else</span> {
+  <span class="hljs-comment">// not browser</span>
+}</pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+    <div class='border-bottom' id='constantsnativewebsocket'>
+      <div class="clearfix small pointer toggle-sibling">
+        <div class="py1 contain">
+            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
+            <span class='code strong strong truncate'>NativeWebSocket</span>
+        </div>
+      </div>
+      <div class="clearfix display-none toggle-target">
+        <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
+    
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/constants.js#L48-L48'>
+      <span>constants.js</span>
+      </a>
+    
+  </div>
+  
+
+  <p>contains <code>WebSocket</code> or <code>MozWebSocket</code> from the global scope if available</p>
+
+ 
+  
+    <div class='pre p1 fill-light mt0'>NativeWebSocket</div>
+   
+  
+  
+
+  
+  
+  
+  
+  
+  
+
+  
+
+  
+
+  
+
+  
+
+  
+    <div class='py1 quiet mt1 prose-big'>Example</div>
+    
+      
+      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { NativeWebSocket } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/constants'</span></pre>
+    
+  
+
+  
+
+  
+
+  
+</section>
+
+      </div>
+    </div>
+  
+</div>
+
+  
+
+  
+
+  
+</section>
+
+        
+          
+          <section class='p2 mb2 clearfix bg-white minishadow'>
+
+  
+  <div class='clearfix'>
+    
     <h3 class='fl m0' id='cookie'>
       cookie
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/cookie.js#L26-L26'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/cookie.js#L26-L26'>
       <span>cookie.js</span>
       </a>
     
@@ -271,7 +569,7 @@
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/cookie.js#L79-L83'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/cookie.js#L79-L83'>
       <span>cookie.js</span>
       </a>
     
@@ -366,7 +664,7 @@ setCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-stri
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/cookie.js#L97-L101'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/cookie.js#L97-L101'>
       <span>cookie.js</span>
       </a>
     
@@ -461,7 +759,7 @@ setSessionCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hl
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/cookie.js#L115-L127'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/cookie.js#L115-L127'>
       <span>cookie.js</span>
       </a>
     
@@ -553,7 +851,7 @@ setSessionCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hl
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/cookie.js#L141-L150'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/cookie.js#L141-L150'>
       <span>cookie.js</span>
       </a>
     
@@ -640,7 +938,7 @@ removeCookie(<span class="hljs-string">'cookie-name'</span>, { req, res }) <span
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/cookie.js#L164-L168'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/cookie.js#L164-L168'>
       <span>cookie.js</span>
       </a>
     
@@ -719,7 +1017,7 @@ setReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/cookie.js#L182-L188'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/cookie.js#L182-L188'>
       <span>cookie.js</span>
       </a>
     
@@ -810,7 +1108,7 @@ setReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/jsx.js#L23-L23'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/jsx.js#L23-L23'>
       <span>jsx.js</span>
       </a>
     
@@ -861,7 +1159,7 @@ setReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/jsx.js#L102-L109'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/jsx.js#L102-L109'>
       <span>jsx.js</span>
       </a>
     
@@ -956,7 +1254,7 @@ compatible nodes</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/jsx.js#L123-L127'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/jsx.js#L123-L127'>
       <span>jsx.js</span>
       </a>
     
@@ -1050,7 +1348,7 @@ compatible nodes</p>
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/jsx.js#L148-L152'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/jsx.js#L148-L152'>
       <span>jsx.js</span>
       </a>
     
@@ -1161,7 +1459,7 @@ compatible nodes</p>
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/markdown.js#L25-L29'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/markdown.js#L25-L29'>
       <span>markdown.js</span>
       </a>
     
@@ -1259,7 +1557,7 @@ markdown(h, <span class="hljs-string">'hello &lt;%= name %&gt;'</span>, { <span 
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/reactShallowStrictEqual.js#L42-L58'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/reactShallowStrictEqual.js#L42-L58'>
       <span>reactShallowStrictEqual.js</span>
       </a>
     
@@ -1378,7 +1676,7 @@ describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/subscription.js#L30-L33'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/subscription.js#L30-L33'>
       <span>subscription.js</span>
       </a>
     
@@ -1434,7 +1732,7 @@ describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/subscription.js#L86-L93'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/subscription.js#L86-L93'>
       <span>subscription.js</span>
       </a>
     
@@ -1533,7 +1831,7 @@ describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/subscription.js#L106-L121'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/subscription.js#L106-L121'>
       <span>subscription.js</span>
       </a>
     
@@ -1632,7 +1930,7 @@ describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
   <div class='clearfix'>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/subscription.js#L134-L151'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/subscription.js#L134-L151'>
       <span>subscription.js</span>
       </a>
     
@@ -1738,7 +2036,7 @@ describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
     </h3>
     
     
-      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/48b5caf3f8985a25a34ab25619aa654b953af534/template.js#L19-L22'>
+      <a class='fr fill-darken0 round round pad1x quiet h5' href='https://github.com/thealjey/webutilities/blob/c17f91c031411b1b51a1dfcba94fa776a4c36333/template.js#L19-L22'>
       <span>template.js</span>
       </a>
     
