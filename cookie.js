@@ -4,6 +4,7 @@ const reduce = require('lodash/reduce')
 const kebabCase = require('lodash/kebabCase')
 const get = require('lodash/get')
 const isDate = require('lodash/isDate')
+const pick = require('lodash/pick')
 
 /**
  * tools for working with cookies
@@ -33,9 +34,21 @@ export type Options = {
 */
 
 const expires = new Date(0)
+const allowed = [
+  'domain',
+  'encode',
+  'expires',
+  'httpOnly',
+  'maxAge',
+  'path',
+  'req',
+  'res',
+  'secure',
+  'signed'
+]
 
 const getConfig = (options/*: ?Options */)/*: Options */ => {
-  const { req, res, ...rest } = options || {}
+  const { req, res, ...rest } = pick(options, allowed)
 
   return {
     path: '/',

@@ -1,11 +1,23 @@
 /* @flow */
 
-const { describe, it } = require('mocha')
+const { describe, it, beforeEach, afterEach } = require('mocha')
 const { strictEqual, ok } = require('assert')
 const sinon = require('sinon')
 const cookie = require('../cookie')
 
 describe('cookie', () => {
+  beforeEach(() => {
+    const win/*: Object */ = global.window = {
+      location: { host: 'clienthost', href: 'clienthref' }
+    }
+    win.document = global.document = { cookie: '' }
+  })
+
+  afterEach(() => {
+    delete global.document
+    delete global.window
+  })
+
   it('setCookie server', () => {
     const spy = sinon.spy()
 
@@ -24,9 +36,6 @@ describe('cookie', () => {
   })
 
   it('setCookie client', () => {
-    global.window = { location: { host: 'clienthost' } }
-    global.document = {}
-
     cookie.setCookie('cookie-name', 'cookie-value')
     strictEqual(
       global.document.cookie,
@@ -35,9 +44,6 @@ describe('cookie', () => {
   })
 
   it('setSessionCookie', () => {
-    global.window = { location: { host: 'clienthost' } }
-    global.document = {}
-
     cookie.setSessionCookie('cookie-name', 'cookie-value')
     strictEqual(
       global.document.cookie,
@@ -68,13 +74,10 @@ describe('cookie', () => {
   })
 
   it('getCookie client', () => {
-    global.document = {
-      cookie: 'cookie-name=cookie-value;path=/;domain=.clienthost;'
-    }
-    strictEqual(cookie.getCookie('cookie-name'), 'cookie-value')
-
-    global.document = { cookie: '' }
     strictEqual(cookie.getCookie('cookie-name'), '')
+
+    document.cookie = 'cookie-name=cookie-value;path=/;domain=.clienthost;'
+    strictEqual(cookie.getCookie('cookie-name'), 'cookie-value')
   })
 
   it('removeCookie server', () => {
@@ -92,19 +95,16 @@ describe('cookie', () => {
   })
 
   it('removeCookie client', () => {
-    global.document = {
-      cookie: 'cookie-name=cookie-value;path=/;domain=.clienthost;'
-    }
+    document.cookie = 'cookie-name=cookie-value;path=/;domain=.clienthost;'
 
     cookie.removeCookie('cookie-name')
     strictEqual(
-      global.document.cookie,
+      document.cookie,
       'cookie-name=;path=/;domain=.clienthost;expires=Thu, 01 Jan 1970 00:00:00 GMT;'
     )
   })
 
   it('setReturnTo', () => {
-    global.window = { location: { host: 'clienthost', href: 'clienthref' } }
     sinon.spy(cookie, 'setSessionCookie')
 
     cookie.setReturnTo({ path: '/test' })
@@ -121,12 +121,9 @@ describe('cookie', () => {
   })
 
   it('getReturnTo', () => {
-    global.document = {
-      cookie: 'return-to=%3Fx%3Dcookie-value;path=/;domain=.clienthost;'
-    }
-    strictEqual(cookie.getReturnTo(), '?x=cookie-value')
-
-    global.document = { cookie: '' }
     strictEqual(cookie.getReturnTo(), '')
+
+    document.cookie = 'return-to=%3Fx%3Dcookie-value;path=/;domain=.clienthost;'
+    strictEqual(cookie.getReturnTo(), '?x=cookie-value')
   })
 })
