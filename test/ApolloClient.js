@@ -38,7 +38,7 @@ const req = options => proxyquire('../ApolloClient', {
 describe('ApolloClient', () => {
   it('NativeWebSocket', () => {
     ApolloClient = req({
-      './constants': { NativeWebSocket: Socket, isBrowser: true }
+      './constants': { NativeWebSocket: Socket, isNode: false }
     })
 
     new ApolloClient({ wsUri: 'test' }) // eslint-disable-line no-new

@@ -10,7 +10,7 @@ const { WebSocketLink } = require('apollo-link-ws')
 const { getMainDefinition } = require('apollo-utilities')
 const { InMemoryCache } = require('apollo-cache-inmemory')
 const compact = require('lodash/compact')
-const { NativeWebSocket, isBrowser } = require('./constants')
+const { NativeWebSocket, isNode } = require('./constants')
 
 const defaultWSOptions = { reconnect: true }
 
@@ -142,7 +142,7 @@ class ApolloClient extends Client {
     super({
       link: ApolloClient.createLink(options),
       cache: ApolloClient.createCache(options),
-      ssrMode: !isBrowser,
+      ssrMode: isNode,
       ssrForceFetchDelay,
       connectToDevTools,
       queryDeduplication,
@@ -226,7 +226,7 @@ class ApolloClient extends Client {
     } = options
 
     return new BatchHttpLink({
-      uri: isBrowser ? browserUri : serverUri,
+      uri: isNode ? serverUri : browserUri,
       includeExtensions,
       fetch,
       headers,
