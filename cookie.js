@@ -9,18 +9,15 @@ const pick = require('lodash/pick')
 /**
  * tools for working with cookies
  *
- * #### Types
- * ```js
+ * @namespace cookie
+ * @example
  * import type { CookieOptions, $Response, $Request } from 'express'
  *
  * export type Options = {
-  *   req?: $Request;
-  *   res?: $Response;
-  *   ...$Exact<CookieOptions>;
+ *   req?: $Request;
+ *   res?: $Response;
+ *   ...$Exact<CookieOptions>;
  * }
- * ```
- *
- * @namespace cookie
  */
 
 /*::

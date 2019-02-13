@@ -33,7 +33,7 @@ const toJSXKey = memoize(key => {
 })
 
 const transformStyle = object => {
-  if (has(object, 'style')) {
+  if (isString(object.style)) {
     object.style = transform(split(object.style, ';'), (result, style) => {
       const firstColon = style.indexOf(':')
       const key = trim(style.substr(0, firstColon))

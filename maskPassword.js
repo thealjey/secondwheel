@@ -9,8 +9,7 @@ const repeat = require('lodash/repeat')
  * @example
  * import maskPassword from 'secondwheel/maskPassword'
  *
- * console.log(maskPassword('secret'))
- * // => ******
+ * maskPassword('secret') // ******
  */
 const maskPassword = (value/*: string */ = '') => repeat('*', value.length)
 

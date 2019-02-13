@@ -1,361 +1,89 @@
 <!doctype html>
-<html>
-<head>
-  <meta charset='utf-8' />
-  <title>secondwheel 0.0.0-development | Documentation</title>
-  <meta name='viewport' content='width=device-width,initial-scale=1'>
-  <link href='assets/bass.css' type='text/css' rel='stylesheet' />
-  <link href='assets/style.css' type='text/css' rel='stylesheet' />
-  <link href='assets/github.css' type='text/css' rel='stylesheet' />
-  <link href='assets/split.css' type='text/css' rel='stylesheet' />
-  <meta name='description' content='unopinionated library of functions for those tired of reinventing the wheel'>
-</head>
-<body class='documentation m0'>
-    <div class='flex'>
-      <div id='split-left' class='overflow-auto fs0 height-viewport-100'>
-        <div class='py1 px2'>
-          <h3 class='mb0 no-anchor'>secondwheel</h3>
-          <div class='mb1'><code>0.0.0-development</code></div>
-          <input
-            placeholder='Filter'
-            id='filter-input'
-            class='col12 block input'
-            type='text' />
-          <div id='toc'>
-            <ul class='list-reset h5 py1-ul'>
-              
-                
-                <li><a
-                  href='#apolloclient'
-                  class=" toggle-sibling">
-                  ApolloClient
-                  <span class='icon'>▸</span>
-                </a>
-                
-                <div class='toggle-target display-none'>
-                  
-                  <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'><span>Static members</span></li>
-                    
-                      <li><a
-                        href='#apolloclientcreatelink'
-                        class='regular pre-open'>
-                        .createLink
-                      </a></li>
-                    
-                      <li><a
-                        href='#apolloclientcreatecache'
-                        class='regular pre-open'>
-                        .createCache
-                      </a></li>
-                    
-                      <li><a
-                        href='#apolloclientcreatehttplink'
-                        class='regular pre-open'>
-                        .createHttpLink
-                      </a></li>
-                    
-                      <li><a
-                        href='#apolloclientcreatewslink'
-                        class='regular pre-open'>
-                        .createWSLink
-                      </a></li>
-                    
-                      <li><a
-                        href='#apolloclientgetlinks'
-                        class='regular pre-open'>
-                        .getLinks
-                      </a></li>
-                    
-                      <li><a
-                        href='#apolloclientcreateerrorlink'
-                        class='regular pre-open'>
-                        .createErrorLink
-                      </a></li>
-                    
-                      <li><a
-                        href='#apolloclientcreateretrylink'
-                        class='regular pre-open'>
-                        .createRetryLink
-                      </a></li>
-                    
-                      <li><a
-                        href='#apolloclientcreatebatchlink'
-                        class='regular pre-open'>
-                        .createBatchLink
-                      </a></li>
-                    
-                    </ul>
-                  
-                  
-                  
-                  
-                </div>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#constants'
-                  class=" toggle-sibling">
-                  constants
-                  <span class='icon'>▸</span>
-                </a>
-                
-                <div class='toggle-target display-none'>
-                  
-                  <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'><span>Static members</span></li>
-                    
-                      <li><a
-                        href='#constantsisnode'
-                        class='regular pre-open'>
-                        .isNode
-                      </a></li>
-                    
-                      <li><a
-                        href='#constantsisbrowser'
-                        class='regular pre-open'>
-                        .isBrowser
-                      </a></li>
-                    
-                      <li><a
-                        href='#constantsnativewebsocket'
-                        class='regular pre-open'>
-                        .NativeWebSocket
-                      </a></li>
-                    
-                    </ul>
-                  
-                  
-                  
-                  
-                </div>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#cookie'
-                  class=" toggle-sibling">
-                  cookie
-                  <span class='icon'>▸</span>
-                </a>
-                
-                <div class='toggle-target display-none'>
-                  
-                  <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'><span>Static members</span></li>
-                    
-                      <li><a
-                        href='#cookiesetcookie'
-                        class='regular pre-open'>
-                        .setCookie
-                      </a></li>
-                    
-                      <li><a
-                        href='#cookiesetsessioncookie'
-                        class='regular pre-open'>
-                        .setSessionCookie
-                      </a></li>
-                    
-                      <li><a
-                        href='#cookiegetcookie'
-                        class='regular pre-open'>
-                        .getCookie
-                      </a></li>
-                    
-                      <li><a
-                        href='#cookieremovecookie'
-                        class='regular pre-open'>
-                        .removeCookie
-                      </a></li>
-                    
-                      <li><a
-                        href='#cookiesetreturnto'
-                        class='regular pre-open'>
-                        .setReturnTo
-                      </a></li>
-                    
-                      <li><a
-                        href='#cookiegetreturnto'
-                        class='regular pre-open'>
-                        .getReturnTo
-                      </a></li>
-                    
-                    </ul>
-                  
-                  
-                  
-                  
-                </div>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#jsx'
-                  class=" toggle-sibling">
-                  jsx
-                  <span class='icon'>▸</span>
-                </a>
-                
-                <div class='toggle-target display-none'>
-                  
-                  <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'><span>Static members</span></li>
-                    
-                      <li><a
-                        href='#jsxarraytojsx'
-                        class='regular pre-open'>
-                        .arrayToJSX
-                      </a></li>
-                    
-                      <li><a
-                        href='#jsxhtmltoarray'
-                        class='regular pre-open'>
-                        .htmlToArray
-                      </a></li>
-                    
-                      <li><a
-                        href='#jsxhtmltojsx'
-                        class='regular pre-open'>
-                        .htmlToJSX
-                      </a></li>
-                    
-                    </ul>
-                  
-                  
-                  
-                  
-                </div>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#markdown'
-                  class="">
-                  markdown
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#maskpassword'
-                  class="">
-                  maskPassword
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#md5'
-                  class="">
-                  md5
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#nextapollo'
-                  class="">
-                  nextApollo
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#reactshallowstrictequal'
-                  class="">
-                  reactShallowStrictEqual
-                  
-                </a>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#subscription'
-                  class=" toggle-sibling">
-                  subscription
-                  <span class='icon'>▸</span>
-                </a>
-                
-                <div class='toggle-target display-none'>
-                  
-                  <ul class='list-reset py1-ul pl1'>
-                    <li class='h5'><span>Static members</span></li>
-                    
-                      <li><a
-                        href='#subscriptioncreated'
-                        class='regular pre-open'>
-                        .created
-                      </a></li>
-                    
-                      <li><a
-                        href='#subscriptionupdated'
-                        class='regular pre-open'>
-                        .updated
-                      </a></li>
-                    
-                      <li><a
-                        href='#subscriptiondeleted'
-                        class='regular pre-open'>
-                        .deleted
-                      </a></li>
-                    
-                    </ul>
-                  
-                  
-                  
-                  
-                </div>
-                
-                </li>
-              
-                
-                <li><a
-                  href='#template'
-                  class="">
-                  template
-                  
-                </a>
-                
-                </li>
-              
-            </ul>
-          </div>
-          <div class='mt1 h6 quiet'>
-            <a href='https://documentation.js.org/reading-documentation.html'>Need help reading this?</a>
-          </div>
-        </div>
-      </div>
-      <div id='split-right' class='relative overflow-auto height-viewport-100'>
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
+<html lang="en"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossOrigin="anonymous"/><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.15.0/themes/prism.css" integrity="sha256-/Kfdz9pXGPe+bFF+TtxHqbg6F9c3Rb0jN48uy+2b/do=" crossOrigin="anonymous"/><style>
+#app {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 20rem 1fr;
+  grid-template-rows: 4rem 1fr;
+  grid-template-areas:
+    "header header"
+    "aside main";
+}
+header { grid-area: header; }
+aside { grid-area: aside; overflow-x: hidden; overflow-y: auto; }
+main { grid-area: main; overflow-x: hidden; overflow-y: auto; }
+.nav-item > .nav, section > article { font-size: .9em; }
+.nav-item > .nav { display: none; }
+.shift { padding-left: 1em; }
+.gray-link { padding-left: 0; color: rgba(26, 26, 26, .75); transition: color .2s ease-out; }
+.gray-link:hover { color: #999; }
+.aside-link.active { font-weight: 500; color: #1a1a1a; }
+.aside-link.active + .nav { display: flex; }
+section > .section-link { font-size: 1.5em; }
+section { margin-bottom: .5em; }
+h4 { font-size: 1.1em; margin-top: 1.2em; font-weight: 400; }
+code { white-space: pre; }
+</style><title>secondwheel - Documentation</title></head><body><div id="app"><header role="banner" class="navbar navbar-expand navbar-dark bg-dark"><a href="#" class="navbar-brand">secondwheel</a><div class="justify-content-end navbar-collapse collapse"><div class="navbar-nav"><a href="https://github.com/thealjey/secondwheel" class="nav-link">GitHub</a></div></div></header><aside><div class="flex-column shift nav"><div class="nav-item"><a href="#templating" data-rb-event-key="#templating" class="aside-link gray-link nav-link">Templating</a><div class="flex-column shift nav"><div class="nav-item"><a href="#template" data-rb-event-key="#template" class="aside-link gray-link nav-link">template</a></div><div class="nav-item"><a href="#markdown" data-rb-event-key="#markdown" class="aside-link gray-link nav-link">markdown</a></div><div class="nav-item"><a href="#jsx" data-rb-event-key="#jsx" class="aside-link gray-link nav-link">jsx</a><div class="flex-column shift nav"><div class="nav-item"><a href="#jsxarraytojsx" data-rb-event-key="#jsxarraytojsx" class="aside-link gray-link nav-link">arrayToJSX</a></div><div class="nav-item"><a href="#jsxhtmltoarray" data-rb-event-key="#jsxhtmltoarray" class="aside-link gray-link nav-link">htmlToArray</a></div><div class="nav-item"><a href="#jsxhtmltojsx" data-rb-event-key="#jsxhtmltojsx" class="aside-link gray-link nav-link">htmlToJSX</a></div></div></div></div></div><div class="nav-item"><a href="#apollographql" data-rb-event-key="#apollographql" class="aside-link gray-link nav-link">Apollo/GraphQL</a><div class="flex-column shift nav"><div class="nav-item"><a href="#apolloclient" data-rb-event-key="#apolloclient" class="aside-link gray-link nav-link">ApolloClient</a><div class="flex-column shift nav"><div class="nav-item"><a href="#apolloclientcreatelink" data-rb-event-key="#apolloclientcreatelink" class="aside-link gray-link nav-link">createLink</a></div><div class="nav-item"><a href="#apolloclientcreatecache" data-rb-event-key="#apolloclientcreatecache" class="aside-link gray-link nav-link">createCache</a></div><div class="nav-item"><a href="#apolloclientcreatehttplink" data-rb-event-key="#apolloclientcreatehttplink" class="aside-link gray-link nav-link">createHttpLink</a></div><div class="nav-item"><a href="#apolloclientcreatewslink" data-rb-event-key="#apolloclientcreatewslink" class="aside-link gray-link nav-link">createWSLink</a></div><div class="nav-item"><a href="#apolloclientgetlinks" data-rb-event-key="#apolloclientgetlinks" class="aside-link gray-link nav-link">getLinks</a></div><div class="nav-item"><a href="#apolloclientcreateerrorlink" data-rb-event-key="#apolloclientcreateerrorlink" class="aside-link gray-link nav-link">createErrorLink</a></div><div class="nav-item"><a href="#apolloclientcreateretrylink" data-rb-event-key="#apolloclientcreateretrylink" class="aside-link gray-link nav-link">createRetryLink</a></div><div class="nav-item"><a href="#apolloclientcreatebatchlink" data-rb-event-key="#apolloclientcreatebatchlink" class="aside-link gray-link nav-link">createBatchLink</a></div></div></div><div class="nav-item"><a href="#nextapollo" data-rb-event-key="#nextapollo" class="aside-link gray-link nav-link">nextApollo</a></div><div class="nav-item"><a href="#subscription" data-rb-event-key="#subscription" class="aside-link gray-link nav-link">subscription</a><div class="flex-column shift nav"><div class="nav-item"><a href="#subscriptioncreated" data-rb-event-key="#subscriptioncreated" class="aside-link gray-link nav-link">created</a></div><div class="nav-item"><a href="#subscriptionupdated" data-rb-event-key="#subscriptionupdated" class="aside-link gray-link nav-link">updated</a></div><div class="nav-item"><a href="#subscriptiondeleted" data-rb-event-key="#subscriptiondeleted" class="aside-link gray-link nav-link">deleted</a></div></div></div></div></div><div class="nav-item"><a href="#hashingmasking" data-rb-event-key="#hashingmasking" class="aside-link gray-link nav-link">Hashing/Masking</a><div class="flex-column shift nav"><div class="nav-item"><a href="#maskpassword" data-rb-event-key="#maskpassword" class="aside-link gray-link nav-link">maskPassword</a></div><div class="nav-item"><a href="#md5" data-rb-event-key="#md5" class="aside-link gray-link nav-link">md5</a></div><div class="nav-item"><a href="#slug" data-rb-event-key="#slug" class="aside-link gray-link nav-link">slug</a></div></div></div><div class="nav-item"><a href="#test-assertions" data-rb-event-key="#test-assertions" class="aside-link gray-link nav-link">Test Assertions</a><div class="flex-column shift nav"><div class="nav-item"><a href="#reactshallowstrictequal" data-rb-event-key="#reactshallowstrictequal" class="aside-link gray-link nav-link">reactShallowStrictEqual</a></div></div></div><div class="nav-item"><a href="#misc" data-rb-event-key="#misc" class="aside-link gray-link nav-link">Misc</a><div class="flex-column shift nav"><div class="nav-item"><a href="#cookie" data-rb-event-key="#cookie" class="aside-link gray-link nav-link">cookie</a><div class="flex-column shift nav"><div class="nav-item"><a href="#cookiesetcookie" data-rb-event-key="#cookiesetcookie" class="aside-link gray-link nav-link">setCookie</a></div><div class="nav-item"><a href="#cookiesetsessioncookie" data-rb-event-key="#cookiesetsessioncookie" class="aside-link gray-link nav-link">setSessionCookie</a></div><div class="nav-item"><a href="#cookiegetcookie" data-rb-event-key="#cookiegetcookie" class="aside-link gray-link nav-link">getCookie</a></div><div class="nav-item"><a href="#cookieremovecookie" data-rb-event-key="#cookieremovecookie" class="aside-link gray-link nav-link">removeCookie</a></div><div class="nav-item"><a href="#cookiesetreturnto" data-rb-event-key="#cookiesetreturnto" class="aside-link gray-link nav-link">setReturnTo</a></div><div class="nav-item"><a href="#cookiegetreturnto" data-rb-event-key="#cookiegetreturnto" class="aside-link gray-link nav-link">getReturnTo</a></div></div></div><div class="nav-item"><a href="#constants" data-rb-event-key="#constants" class="aside-link gray-link nav-link">constants</a><div class="flex-column shift nav"><div class="nav-item"><a href="#constantsisnode" data-rb-event-key="#constantsisnode" class="aside-link gray-link nav-link">isNode</a></div><div class="nav-item"><a href="#constantsisbrowser" data-rb-event-key="#constantsisbrowser" class="aside-link gray-link nav-link">isBrowser</a></div><div class="nav-item"><a href="#constantsnativewebsocket" data-rb-event-key="#constantsnativewebsocket" class="aside-link gray-link nav-link">NativeWebSocket</a></div></div></div><div class="nav-item"><a href="#theme" data-rb-event-key="#theme" class="aside-link gray-link nav-link">theme</a></div></div></div></div></aside><main><article class="shift"><section id="templating"><a href="#templating" class="section-link gray-link nav-link">Templating</a><div>
+</div><article class="shift"><section id="template"><a href="#template" class="section-link gray-link nav-link">template</a><div>a wrapper around
 
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='apolloclient'>
-      ApolloClient
-    </h3>
-    
-    
-  </div>
-  
+<a href="https://lodash.com/docs/4.17.11#template">lodash/template</a>
+,
+which caches compiled templates in memory
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">tpl<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> <span class="token operator">=</span> <span class="token string">''</span>
+data<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow"><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> template <span class="token keyword">from</span> <span class="token string">'secondwheel/template'</span>
 
-  <ul>
+<span class="token function">template</span><span class="token punctuation">(</span><span class="token string">'hello &lt;%= name %>'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'foo'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token function">template</span><span class="token punctuation">(</span><span class="token string">'hello &lt;%= name %>'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'bar'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// only compiled once</span></code></pre></section><section id="markdown"><a href="#markdown" class="section-link gray-link nav-link">markdown</a><div>converts a markdown string to
+
+<a href="https://github.com/hyperhype/hyperscript">HyperScript</a>
+
+compatible nodes
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">h<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>
+tpl<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> <span class="token operator">=</span> <span class="token string">''</span>
+data<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> markdown <span class="token keyword">from</span> <span class="token string">'secondwheel/markdown'</span>
+
+<span class="token comment">// use with any HyperScript compatible framework</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createElement <span class="token keyword">as</span> h <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> h <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'preact'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> h <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'inferno-hyperscript'</span>
+
+<span class="token function">markdown</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> <span class="token string">'hello &lt;%= name %>'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'foo'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// &lt;p>hello foo&lt;/p></span></code></pre></section><section id="jsx"><a href="#jsx" class="section-link gray-link nav-link">jsx</a><div>tools for working with jsx
+</div><article class="shift"><section id="jsxarraytojsx"><a href="#jsxarraytojsx" class="section-link gray-link nav-link">arrayToJSX</a><div>converts an array of objects and strings to
+
+<a href="https://github.com/hyperhype/hyperscript">HyperScript</a>
+
+compatible nodes
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">h<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>
+arr<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)> <span class="token operator">=</span> <span class="token punctuation">[</span><span class="token punctuation">]</span></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> arrayToJSX <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/jsx'</span>
+
+<span class="token comment">// use with any HyperScript compatible framework</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createElement <span class="token keyword">as</span> h <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> h <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'preact'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> h <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'inferno-hyperscript'</span>
+
+<span class="token comment">// render dynamic content without `dangerouslySetInnerHTML`</span>
+<span class="token punctuation">(</span><span class="token operator">&lt;</span>div<span class="token operator">></span><span class="token punctuation">{</span><span class="token function">arrayToJSX</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> <span class="token operator">&lt;</span>result <span class="token keyword">of</span> htmlToArray<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">)</span></code></pre></section><section id="jsxhtmltoarray"><a href="#jsxhtmltoarray" class="section-link gray-link nav-link">htmlToArray</a><div>converts an html string to an array of plain objects and strings
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">tpl<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> <span class="token operator">=</span> <span class="token string">''</span>
+data<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow"><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> htmlToArray <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/jsx'</span>
+
+<span class="token comment">// stringify to transmit over the network, cache, etc.</span>
+<span class="token keyword">const</span> str <span class="token operator">=</span> <span class="token constant">JSON</span><span class="token punctuation">.</span><span class="token function">stringify</span><span class="token punctuation">(</span><span class="token function">htmlToArray</span><span class="token punctuation">(</span><span class="token string">'&lt;b>hello &lt;%= name %>&lt;/b>'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'foo'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">)</span></code></pre></section><section id="jsxhtmltojsx"><a href="#jsxhtmltojsx" class="section-link gray-link nav-link">htmlToJSX</a><div>converts an html string to
+
+<a href="https://github.com/hyperhype/hyperscript">HyperScript</a>
+
+compatible nodes
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">h<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>
+tpl<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> <span class="token operator">=</span> <span class="token string">''</span>
+data<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a> <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> htmlToJSX <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/jsx'</span>
+
+<span class="token comment">// use with any HyperScript compatible framework</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> createElement <span class="token keyword">as</span> h <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> h <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'preact'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> h <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'inferno-hyperscript'</span>
+
+<span class="token comment">// bold text without `dangerouslySetInnerHTML`</span>
+<span class="token punctuation">(</span><span class="token operator">&lt;</span>div<span class="token operator">></span><span class="token punctuation">{</span><span class="token function">htmlToJSX</span><span class="token punctuation">(</span>h<span class="token punctuation">,</span> <span class="token string">'&lt;b>hello &lt;%= name %>&lt;/b>'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> name<span class="token punctuation">:</span> <span class="token string">'foo'</span> <span class="token punctuation">}</span><span class="token punctuation">)</span><span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>div<span class="token operator">></span><span class="token punctuation">)</span></code></pre></section></article></section></article></section><section id="apollographql"><a href="#apollographql" class="section-link gray-link nav-link">Apollo/GraphQL</a><div>
+</div><article class="shift"><section id="apolloclient"><a href="#apolloclient" class="section-link gray-link nav-link">ApolloClient</a><div><ul>
 <li>like <a href="https://www.npmjs.com/package/apollo-boost">apollo-boost</a>, but
 allows for a greater degree of configurability</li>
 <li>augments <a href="https://www.npmjs.com/package/apollo-client">apollo-client</a>
@@ -366,2613 +94,243 @@ with usefull defaults</li>
 <li>provides static methods, overriding which any aspect of the default
 functionality can be changed</li>
 </ul>
-<h4>Types</h4>
-<pre class='hljs'><span class="hljs-keyword">export</span> type Options = {
-
-  uri?: string = <span class="hljs-string">'/graphql'</span>;
-  <span class="hljs-comment">// used in the browser</span>
-  browserUri?: string = uri;
-  <span class="hljs-comment">// used in Node.js</span>
-  serverUri?: string = browserUri;
-  <span class="hljs-comment">// if provided a WebSocketLink will be configured</span>
-  wsUri?: string;
-  <span class="hljs-comment">// use on the client to restore server state, no the need to re-run queries</span>
-  cache?: <span class="hljs-built_in">Object</span> = {};
-  <span class="hljs-comment">// by default prints errors to console</span>
-  onError?: <span class="hljs-function"><span class="hljs-params">error</span> =&gt;</span> <span class="hljs-keyword">void</span>;
-
-  <span class="hljs-comment">// "apollo-client" options</span>
-  ssrForceFetchDelay?: number;
-  connectToDevTools?: boolean;
-  queryDeduplication?: boolean;
-  name?: string;
-  version?: string;
-  defaultOptions?: { watchQuery?: <span class="hljs-built_in">Object</span>; query?: <span class="hljs-built_in">Object</span>; mutate?: <span class="hljs-built_in">Object</span>; };
-
-  <span class="hljs-comment">// "apollo-link-ws" options</span>
-  wsOptions?: <span class="hljs-built_in">Object</span> = { <span class="hljs-attr">reconnect</span>: <span class="hljs-literal">true</span> };
-  webSocketImpl?: WebSocket;
-
-  <span class="hljs-comment">// "apollo-link-retry" options</span>
-  delay?: { initial?: number; max?: number; jitter?: number; };
-  attempts?: { max?: number; retryIf?: <span class="hljs-function">(<span class="hljs-params">error, operation</span>) =&gt;</span> boolean; };
-
-  <span class="hljs-comment">// "apollo-link-batch-http" options</span>
-  includeExtensions?: boolean;
-  headers?: <span class="hljs-built_in">Object</span> = {};
-  credentials?: string = <span class="hljs-string">'same-origin'</span>;
-  fetchOptions?: <span class="hljs-built_in">Object</span> = {};
-  useGETForQueries?: boolean;
-  batchMax?: number;
-  batchInterval?: number;
-  batchKey?: <span class="hljs-function"><span class="hljs-params">()</span> =&gt;</span> string;
-
-}</pre>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>new ApolloClient(options: Options)</div>
-   
-  
-  
-    <p>
-      Extends
-      
-        Client
-      
-    </p>
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options
-            = <code>{}</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> ApolloClient <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/ApolloClient'</span>
-
-<span class="hljs-comment">// connecting to a simple "graphql-yoga" server with default options</span>
-<span class="hljs-keyword">const</span> client = <span class="hljs-keyword">new</span> ApolloClient({
-  <span class="hljs-attr">uri</span>: <span class="hljs-string">'http://localhost:4000'</span>,
-  <span class="hljs-attr">wsUri</span>: <span class="hljs-string">'ws://localhost:4000'</span>
-});</pre>
-    
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Static Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='apolloclientcreatelink'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>createLink(options)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>creates the final instance of ApolloLink</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>createLink(options: Options): ApolloLink</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>ApolloLink</code>
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='apolloclientcreatecache'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>createCache(options)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>creates an instance of ApolloCache</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>createCache(options: Options): ApolloCache</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>ApolloCache</code>
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='apolloclientcreatehttplink'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>createHttpLink(options)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>creates an instance of ApolloLink</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>createHttpLink(options: Options): ApolloLink</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>ApolloLink</code>
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='apolloclientcreatewslink'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>createWSLink(options)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>creates an instance of WebSocketLink</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>createWSLink(options: Options): ApolloLink?</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>ApolloLink?</code>
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='apolloclientgetlinks'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>getLinks(options)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>returns an array of ApolloLink to be used in the creation of the final link
-falsy values are filtered out</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>getLinks(options: Options): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ApolloLink?></div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ApolloLink?></code>
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='apolloclientcreateerrorlink'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>createErrorLink(options)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>creates an instance of ErrorLink</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>createErrorLink(options: Options): ApolloLink?</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>ApolloLink?</code>
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='apolloclientcreateretrylink'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>createRetryLink(options)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>creates an instance of RetryLink</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>createRetryLink(options: Options): ApolloLink?</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>ApolloLink?</code>
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='apolloclientcreatebatchlink'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>createBatchLink(options)</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>creates an instance of HttpLink</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>createBatchLink(options: Options): ApolloLink?</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code>ApolloLink?</code>
-    
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-</div>
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='constants'>
-      constants
-    </h3>
-    
-    
-  </div>
-  
-
-  
- 
-  
-    <div class='pre p1 fill-light mt0'>constants</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Static Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='constantsisnode'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>isNode</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>truthy when running in Node.js</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>isNode</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { isNode } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/constants'</span>
-
-<span class="hljs-keyword">if</span> (isNode) {
-  <span class="hljs-comment">// Node.js</span>
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-comment">// not Node.js</span>
-}</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='constantsisbrowser'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>isBrowser</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>truthy when running in a browser</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>isBrowser</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { isBrowser } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/constants'</span>
-
-<span class="hljs-keyword">if</span> (isBrowser) {
-  <span class="hljs-comment">// browser</span>
-} <span class="hljs-keyword">else</span> {
-  <span class="hljs-comment">// not browser</span>
-}</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='constantsnativewebsocket'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>NativeWebSocket</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>contains <code>WebSocket</code> or <code>MozWebSocket</code> from the global scope if available</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>NativeWebSocket</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { NativeWebSocket } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/constants'</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-</div>
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='cookie'>
-      cookie
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>tools for working with cookies</p>
-<h4>Types</h4>
-<pre class='hljs'><span class="hljs-keyword">import</span> type { CookieOptions, $Response, $Request } <span class="hljs-keyword">from</span> <span class="hljs-string">'express'</span>
-
-<span class="hljs-keyword">export</span> type Options = {
-  req?: $Request;
-  res?: $Response;
-  ...$Exact&lt;CookieOptions&gt;;
-}</pre>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>cookie</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Static Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='cookiesetcookie'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>setCookie</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>sets a cookie</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>setCookie</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>value</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { setCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-setCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>)               <span class="hljs-comment">// browser</span>
-setCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='cookiesetsessioncookie'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>setSessionCookie</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>sets a session (temporary) cookie</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>setSessionCookie</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>value</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { setSessionCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-setSessionCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>)               <span class="hljs-comment">// browser</span>
-setSessionCookie(<span class="hljs-string">'cookie-name'</span>, <span class="hljs-string">'cookie-value'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='cookiegetcookie'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>getCookie</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>retrieves a cookie by name</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>getCookie</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { getCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-<span class="hljs-keyword">const</span> cookieValue = getCookie(<span class="hljs-string">'cookie-name'</span>)               <span class="hljs-comment">// browser</span>
-<span class="hljs-keyword">const</span> cookieValue = getCookie(<span class="hljs-string">'cookie-name'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='cookieremovecookie'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>removeCookie</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>removes a cookie</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>removeCookie</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>name</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { removeCookie } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-removeCookie(<span class="hljs-string">'cookie-name'</span>)               <span class="hljs-comment">// browser</span>
-removeCookie(<span class="hljs-string">'cookie-name'</span>, { req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='cookiesetreturnto'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>setReturnTo</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>sets the "return to" value (current URL) into a session cookie</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>setReturnTo</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { setReturnTo } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-setReturnTo()             <span class="hljs-comment">// browser</span>
-setReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='cookiegetreturnto'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>getReturnTo</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>returns and removes the "return to" value</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>getReturnTo</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>options</span> <code class='quiet'>(Options?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { getReturnTo } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/cookie'</span>
-
-<span class="hljs-keyword">const</span> cookieValue = getReturnTo()             <span class="hljs-comment">// browser</span>
-<span class="hljs-keyword">const</span> cookieValue = getReturnTo({ req, res }) <span class="hljs-comment">// server</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-</div>
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='jsx'>
-      jsx
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>tools for working with jsx</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>jsx</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Static Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='jsxarraytojsx'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>arrayToJSX</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>converts an array of objects and strings to
-<a href="https://github.com/hyperhype/hyperscript">HyperScript</a>
-compatible nodes</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>arrayToJSX</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>h</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>arr</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)>
-            = <code>[]</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { arrayToJSX } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/jsx'</span>
-
-<span class="hljs-comment">// use with any HyperScript compatible framework</span>
-<span class="hljs-keyword">import</span> { createElement <span class="hljs-keyword">as</span> h } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
-<span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'preact'</span>
-<span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'inferno-hyperscript'</span>
-
-<span class="hljs-comment">// render dynamic content without `dangerouslySetInnerHTML`</span>
-(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{arrayToJSX(h, <span class="hljs-tag">&lt;<span class="hljs-name">result</span> <span class="hljs-attr">of</span> <span class="hljs-attr">htmlToArray</span>&gt;</span>)}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span>)</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='jsxhtmltoarray'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>htmlToArray</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>converts an html string to an array of plain objects and strings</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>htmlToArray</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>tpl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-            = <code>&#39;&#39;</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-            = <code>{}</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> | <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)></code>
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { htmlToArray } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/jsx'</span>
-
-<span class="hljs-comment">// stringify to transmit over the network, cache, etc.</span>
-<span class="hljs-keyword">const</span> str = <span class="hljs-built_in">JSON</span>.stringify(htmlToArray(<span class="hljs-string">'&lt;b&gt;hello &lt;%= name %&gt;&lt;/b&gt;'</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">'foo'</span> }))</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='jsxhtmltojsx'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>htmlToJSX</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>converts an html string to
-<a href="https://github.com/hyperhype/hyperscript">HyperScript</a>
-compatible nodes</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>htmlToJSX</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>h</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>tpl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-            = <code>&#39;&#39;</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-            = <code>{}</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { htmlToJSX } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/jsx'</span>
-
-<span class="hljs-comment">// use with any HyperScript compatible framework</span>
-<span class="hljs-keyword">import</span> { createElement <span class="hljs-keyword">as</span> h } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
-<span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'preact'</span>
-<span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'inferno-hyperscript'</span>
-
-<span class="hljs-comment">// bold text without `dangerouslySetInnerHTML`</span>
-(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">div</span>&gt;</span>{htmlToJSX(h, '<span class="hljs-tag">&lt;<span class="hljs-name">b</span>&gt;</span>hello <span class="hljs-tag">&lt;<span class="hljs-name">%=</span> <span class="hljs-attr">name</span> %&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">b</span>&gt;</span>', { name: 'foo' })}<span class="hljs-tag">&lt;/<span class="hljs-name">div</span>&gt;</span></span>)</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-</div>
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='markdown'>
-      markdown
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>converts a markdown string to
-<a href="https://github.com/hyperhype/hyperscript">HyperScript</a>
-compatible nodes</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>markdown</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>h</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Statements/function">Function</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>tpl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-            = <code>&#39;&#39;</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-            = <code>{}</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> markdown <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/markdown'</span>
-
-<span class="hljs-comment">// use with any HyperScript compatible framework</span>
-<span class="hljs-keyword">import</span> { createElement <span class="hljs-keyword">as</span> h } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
-<span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'preact'</span>
-<span class="hljs-keyword">import</span> { h } <span class="hljs-keyword">from</span> <span class="hljs-string">'inferno-hyperscript'</span>
-
-markdown(h, <span class="hljs-string">'hello &lt;%= name %&gt;'</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">'foo'</span> }) <span class="hljs-comment">// &lt;p&gt;hello foo&lt;/p&gt;</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='maskpassword'>
-      maskPassword
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>produces a string of the same length as the original with every character
-replaced by a <code>"*"</code></p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>maskPassword</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>value</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-            = <code>&#39;&#39;</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> maskPassword <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/maskPassword'</span>
-
-<span class="hljs-built_in">console</span>.log(maskPassword(<span class="hljs-string">'secret'</span>))
-<span class="hljs-comment">// =&gt; ******</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='md5'>
-      md5
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>produces an md5 hash on Node.js as well as in a browser</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>md5</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>value</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-            = <code>&#39;&#39;</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> md5 <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/md5'</span>
-
-<span class="hljs-built_in">console</span>.log(md5(<span class="hljs-string">'42'</span>))
-<span class="hljs-comment">// =&gt; a1d0c6e83f027327d8461063f4ac58a6</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='nextapollo'>
-      nextApollo
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>Apollo-Client HOC for the Next.js
-<a href="https://nextjs.org/docs/#custom-app">App</a> component.</p>
+</div><h4>Extends</h4><div>Client</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">options<span class="token punctuation">:</span> Options <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">export</span> type Options <span class="token operator">=</span> <span class="token punctuation">{</span>
+
+  uri<span class="token operator">?</span><span class="token punctuation">:</span> string <span class="token operator">=</span> <span class="token string">'/graphql'</span><span class="token punctuation">;</span>
+  <span class="token comment">// used in the browser</span>
+  browserUri<span class="token operator">?</span><span class="token punctuation">:</span> string <span class="token operator">=</span> uri<span class="token punctuation">;</span>
+  <span class="token comment">// used in Node.js</span>
+  serverUri<span class="token operator">?</span><span class="token punctuation">:</span> string <span class="token operator">=</span> browserUri<span class="token punctuation">;</span>
+  <span class="token comment">// if provided a WebSocketLink will be configured</span>
+  wsUri<span class="token operator">?</span><span class="token punctuation">:</span> string<span class="token punctuation">;</span>
+  <span class="token comment">// use on the client to restore server state, no the need to re-run queries</span>
+  cache<span class="token operator">?</span><span class="token punctuation">:</span> Object <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  <span class="token comment">// by default prints errors to console</span>
+  onError<span class="token operator">?</span><span class="token punctuation">:</span> error <span class="token operator">=></span> <span class="token keyword">void</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// "apollo-client" options</span>
+  ssrForceFetchDelay<span class="token operator">?</span><span class="token punctuation">:</span> number<span class="token punctuation">;</span>
+  connectToDevTools<span class="token operator">?</span><span class="token punctuation">:</span> boolean<span class="token punctuation">;</span>
+  queryDeduplication<span class="token operator">?</span><span class="token punctuation">:</span> boolean<span class="token punctuation">;</span>
+  name<span class="token operator">?</span><span class="token punctuation">:</span> string<span class="token punctuation">;</span>
+  version<span class="token operator">?</span><span class="token punctuation">:</span> string<span class="token punctuation">;</span>
+  defaultOptions<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token punctuation">{</span> watchQuery<span class="token operator">?</span><span class="token punctuation">:</span> Object<span class="token punctuation">;</span> query<span class="token operator">?</span><span class="token punctuation">:</span> Object<span class="token punctuation">;</span> mutate<span class="token operator">?</span><span class="token punctuation">:</span> Object<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// "apollo-link-ws" options</span>
+  wsOptions<span class="token operator">?</span><span class="token punctuation">:</span> Object <span class="token operator">=</span> <span class="token punctuation">{</span> reconnect<span class="token punctuation">:</span> <span class="token boolean">true</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  webSocketImpl<span class="token operator">?</span><span class="token punctuation">:</span> WebSocket<span class="token punctuation">;</span>
+
+  <span class="token comment">// "apollo-link-retry" options</span>
+  delay<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token punctuation">{</span> initial<span class="token operator">?</span><span class="token punctuation">:</span> number<span class="token punctuation">;</span> max<span class="token operator">?</span><span class="token punctuation">:</span> number<span class="token punctuation">;</span> jitter<span class="token operator">?</span><span class="token punctuation">:</span> number<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+  attempts<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token punctuation">{</span> max<span class="token operator">?</span><span class="token punctuation">:</span> number<span class="token punctuation">;</span> retryIf<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token punctuation">(</span>error<span class="token punctuation">,</span> operation<span class="token punctuation">)</span> <span class="token operator">=></span> boolean<span class="token punctuation">;</span> <span class="token punctuation">}</span><span class="token punctuation">;</span>
+
+  <span class="token comment">// "apollo-link-batch-http" options</span>
+  includeExtensions<span class="token operator">?</span><span class="token punctuation">:</span> boolean<span class="token punctuation">;</span>
+  headers<span class="token operator">?</span><span class="token punctuation">:</span> Object <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  credentials<span class="token operator">?</span><span class="token punctuation">:</span> string <span class="token operator">=</span> <span class="token string">'same-origin'</span><span class="token punctuation">;</span>
+  fetchOptions<span class="token operator">?</span><span class="token punctuation">:</span> Object <span class="token operator">=</span> <span class="token punctuation">{</span><span class="token punctuation">}</span><span class="token punctuation">;</span>
+  useGETForQueries<span class="token operator">?</span><span class="token punctuation">:</span> boolean<span class="token punctuation">;</span>
+  batchMax<span class="token operator">?</span><span class="token punctuation">:</span> number<span class="token punctuation">;</span>
+  batchInterval<span class="token operator">?</span><span class="token punctuation">:</span> number<span class="token punctuation">;</span>
+  batchKey<span class="token operator">?</span><span class="token punctuation">:</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> string<span class="token punctuation">;</span>
+
+<span class="token punctuation">}</span></code></pre><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> ApolloClient <span class="token keyword">from</span> <span class="token string">'secondwheel/ApolloClient'</span>
+
+<span class="token comment">// connecting to a simple "graphql-yoga" server with default options</span>
+<span class="token keyword">const</span> client <span class="token operator">=</span> <span class="token keyword">new</span> <span class="token class-name">ApolloClient</span><span class="token punctuation">(</span><span class="token punctuation">{</span>
+  uri<span class="token punctuation">:</span> <span class="token string">'http://localhost:4000'</span><span class="token punctuation">,</span>
+  wsUri<span class="token punctuation">:</span> <span class="token string">'ws://localhost:4000'</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre><article class="shift"><section id="apolloclientcreatelink"><a href="#apolloclientcreatelink" class="section-link gray-link nav-link">createLink</a><div>creates the final instance of ApolloLink
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">options<span class="token punctuation">:</span> Options</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow">ApolloLink</code></pre></section><section id="apolloclientcreatecache"><a href="#apolloclientcreatecache" class="section-link gray-link nav-link">createCache</a><div>creates an instance of ApolloCache
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">options<span class="token punctuation">:</span> Options</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow">ApolloCache</code></pre></section><section id="apolloclientcreatehttplink"><a href="#apolloclientcreatehttplink" class="section-link gray-link nav-link">createHttpLink</a><div>creates an instance of ApolloLink
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">options<span class="token punctuation">:</span> Options</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow">ApolloLink</code></pre></section><section id="apolloclientcreatewslink"><a href="#apolloclientcreatewslink" class="section-link gray-link nav-link">createWSLink</a><div>creates an instance of WebSocketLink
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">options<span class="token punctuation">:</span> Options</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow">ApolloLink?</code></pre></section><section id="apolloclientgetlinks"><a href="#apolloclientgetlinks" class="section-link gray-link nav-link">getLinks</a><div>returns an array of ApolloLink to be used in the creation of the final link
+falsy values are filtered out
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">options<span class="token punctuation">:</span> Options</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow"><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array">Array</a>&#x3C;ApolloLink?></code></pre></section><section id="apolloclientcreateerrorlink"><a href="#apolloclientcreateerrorlink" class="section-link gray-link nav-link">createErrorLink</a><div>creates an instance of ErrorLink
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">options<span class="token punctuation">:</span> Options</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow">ApolloLink?</code></pre></section><section id="apolloclientcreateretrylink"><a href="#apolloclientcreateretrylink" class="section-link gray-link nav-link">createRetryLink</a><div>creates an instance of RetryLink
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">options<span class="token punctuation">:</span> Options</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow">ApolloLink?</code></pre></section><section id="apolloclientcreatebatchlink"><a href="#apolloclientcreatebatchlink" class="section-link gray-link nav-link">createBatchLink</a><div>creates an instance of HttpLink
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">options<span class="token punctuation">:</span> Options</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow">ApolloLink?</code></pre></section></article></section><section id="nextapollo"><a href="#nextapollo" class="section-link gray-link nav-link">nextApollo</a><div>Apollo-Client HOC for the Next.js
+
+<a href="https://nextjs.org/docs/#custom-app">App</a>
+ component.
 <p>A simpler way to achieve the same result as in
 <a href="https://github.com/zeit/next.js/tree/master/examples/with-apollo">with-apollo</a>,
 which does not require any boilerplate code.</p>
 <p>The <code>ctx</code> object is equivalent to the one received in all
 <a href="https://nextjs.org/docs/#fetching-data-and-component-lifecycle">getInitialProps</a>
 hooks.</p>
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">getClient<span class="token punctuation">:</span> function (options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, ctx: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="#apolloclient">ApolloClient</a>
+getProps<span class="token punctuation">:</span> function (ctx: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>? <span class="token operator">=</span> noop</code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> React <span class="token keyword">from</span> <span class="token string">'react'</span>
+<span class="token keyword">import</span> App<span class="token punctuation">,</span> <span class="token punctuation">{</span> Container <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'next/app'</span>
+<span class="token keyword">import</span> <span class="token punctuation">{</span> ApolloProvider <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'react-apollo'</span>
+<span class="token keyword">import</span> nextApollo <span class="token keyword">from</span> <span class="token string">'secondwheel/nextApollo'</span>
+<span class="token keyword">import</span> ApolloClient <span class="token keyword">from</span> <span class="token string">'secondwheel/ApolloClient'</span>
 
- 
-  
-    <div class='pre p1 fill-light mt0'>nextApollo</div>
-   
-  
-  
+<span class="token keyword">class</span> <span class="token class-name">MyApp</span> <span class="token keyword">extends</span> <span class="token class-name">App</span> <span class="token punctuation">{</span>
+  <span class="token function">render</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token punctuation">{</span>
+    <span class="token keyword">const</span> <span class="token punctuation">{</span> Component<span class="token punctuation">,</span> pageProps<span class="token punctuation">,</span> client <span class="token punctuation">}</span> <span class="token operator">=</span> <span class="token keyword">this</span><span class="token punctuation">.</span>props
 
-  
-  
-  
-  
-  
-  
+    <span class="token keyword">return</span> <span class="token punctuation">(</span>
+      <span class="token operator">&lt;</span>Container<span class="token operator">></span>
+        <span class="token operator">&lt;</span>ApolloProvider client<span class="token operator">=</span><span class="token punctuation">{</span>client<span class="token punctuation">}</span><span class="token operator">></span>
+          <span class="token operator">&lt;</span>Component <span class="token punctuation">{</span><span class="token operator">...</span>pageProps<span class="token punctuation">}</span> <span class="token operator">/</span><span class="token operator">></span>
+        <span class="token operator">&lt;</span><span class="token operator">/</span>ApolloProvider<span class="token operator">></span>
+      <span class="token operator">&lt;</span><span class="token operator">/</span>Container<span class="token operator">></span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span>
+<span class="token punctuation">}</span>
 
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>getClient</span> <code class='quiet'>(function (options: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>, ctx: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="#apolloclient">ApolloClient</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>getProps</span> <code class='quiet'>(function (ctx: <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>): <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>?
-            = <code>noop</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token function">nextApollo</span><span class="token punctuation">(</span>
+  options <span class="token operator">=></span> <span class="token keyword">new</span> <span class="token class-name">ApolloClient</span><span class="token punctuation">(</span><span class="token punctuation">{</span> uri<span class="token punctuation">:</span> <span class="token string">'http://localhost:4000'</span><span class="token punctuation">,</span> <span class="token operator">...</span>options <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">)</span><span class="token punctuation">(</span>MyApp<span class="token punctuation">)</span></code></pre></section><section id="subscription"><a href="#subscription" class="section-link gray-link nav-link">subscription</a><div>tools for working with GraphQL subscriptions
+</div><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">export</span> type Payload <span class="token operator">=</span> <span class="token punctuation">{</span>
+  mutation<span class="token punctuation">:</span> <span class="token string">'CREATED'</span> <span class="token operator">|</span> <span class="token string">'UPDATED'</span> <span class="token operator">|</span> <span class="token string">'DELETED'</span><span class="token punctuation">;</span>
+  node<span class="token punctuation">:</span> Object <span class="token operator">|</span> Object<span class="token punctuation">[</span><span class="token punctuation">]</span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><article class="shift"><section id="subscriptioncreated"><a href="#subscriptioncreated" class="section-link gray-link nav-link">created</a><div>updates object to reflect created nodes at path
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">result<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+path<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+payload<span class="token punctuation">:</span> Payload</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow"><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> created <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/subscription'</span>
 
-  
+<span class="token keyword">const</span> newData <span class="token operator">=</span> <span class="token function">created</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'path.to.nested.list'</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span></code></pre></section><section id="subscriptionupdated"><a href="#subscriptionupdated" class="section-link gray-link nav-link">updated</a><div>updates object to reflect updated nodes at path
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">result<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+path<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+payload<span class="token punctuation">:</span> Payload</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow"><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> updated <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/subscription'</span>
 
-  
+<span class="token keyword">const</span> newData <span class="token operator">=</span> <span class="token function">updated</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'path'</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span></code></pre></section><section id="subscriptiondeleted"><a href="#subscriptiondeleted" class="section-link gray-link nav-link">deleted</a><div>updates object to reflect deleted nodes at path
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">result<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
+path<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+payload<span class="token punctuation">:</span> Payload</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow"><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> deleted <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/subscription'</span>
 
-  
+<span class="token keyword">const</span> newData <span class="token operator">=</span> <span class="token function">deleted</span><span class="token punctuation">(</span>data<span class="token punctuation">,</span> <span class="token string">'path'</span><span class="token punctuation">,</span> payload<span class="token punctuation">)</span></code></pre></section></article></section></article></section><section id="hashingmasking"><a href="#hashingmasking" class="section-link gray-link nav-link">Hashing/Masking</a><div>
+</div><article class="shift"><section id="maskpassword"><a href="#maskpassword" class="section-link gray-link nav-link">maskPassword</a><div>produces a string of the same length as the original with every character
+replaced by a 
+<code>"*"</code>
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">value<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> <span class="token operator">=</span> <span class="token string">''</span></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> maskPassword <span class="token keyword">from</span> <span class="token string">'secondwheel/maskPassword'</span>
 
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> React <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>
-<span class="hljs-keyword">import</span> App, { Container } <span class="hljs-keyword">from</span> <span class="hljs-string">'next/app'</span>
-<span class="hljs-keyword">import</span> { ApolloProvider } <span class="hljs-keyword">from</span> <span class="hljs-string">'react-apollo'</span>
-<span class="hljs-keyword">import</span> nextApollo <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/nextApollo'</span>
-<span class="hljs-keyword">import</span> ApolloClient <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/ApolloClient'</span>
+<span class="token function">maskPassword</span><span class="token punctuation">(</span><span class="token string">'secret'</span><span class="token punctuation">)</span> <span class="token comment">// ******</span></code></pre></section><section id="md5"><a href="#md5" class="section-link gray-link nav-link">md5</a><div>produces an md5 hash on Node.js as well as in a browser
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">value<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> <span class="token operator">=</span> <span class="token string">''</span></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> md5 <span class="token keyword">from</span> <span class="token string">'secondwheel/md5'</span>
 
-<span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">MyApp</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">App</span> </span>{
-  render () {
-    <span class="hljs-keyword">const</span> { Component, pageProps, client } = <span class="hljs-keyword">this</span>.props
+<span class="token function">md5</span><span class="token punctuation">(</span><span class="token string">'42'</span><span class="token punctuation">)</span> <span class="token comment">// a1d0c6e83f027327d8461063f4ac58a6</span></code></pre></section><section id="slug"><a href="#slug" class="section-link gray-link nav-link">slug</a><div>generate a slug just like GitHub does for markdown headings
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">value<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a> <span class="token operator">=</span> <span class="token string">''</span></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> slug <span class="token keyword">from</span> <span class="token string">'secondwheel/slug'</span>
 
-    <span class="hljs-keyword">return</span> (
-      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">Container</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-name">ApolloProvider</span> <span class="hljs-attr">client</span>=<span class="hljs-string">{client}</span>&gt;</span>
-          <span class="hljs-tag">&lt;<span class="hljs-name">Component</span> {<span class="hljs-attr">...pageProps</span>} /&gt;</span>
-        <span class="hljs-tag">&lt;/<span class="hljs-name">ApolloProvider</span>&gt;</span>
-      <span class="hljs-tag">&lt;/<span class="hljs-name">Container</span>&gt;</span>
-    )
-  }
-}
-
-export default nextApollo(
-  options =&gt; new ApolloClient({ uri: 'http://localhost:4000', ...options })
-)(MyApp)</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='reactshallowstrictequal'>
-      reactShallowStrictEqual
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>a unit testing helper for React components</p>
+<span class="token function">slug</span><span class="token punctuation">(</span><span class="token string">'hello world'</span><span class="token punctuation">)</span> <span class="token comment">// hello-world</span></code></pre></section></article></section><section id="test-assertions"><a href="#test-assertions" class="section-link gray-link nav-link">Test Assertions</a><div>
+</div><article class="shift"><section id="reactshallowstrictequal"><a href="#reactshallowstrictequal" class="section-link gray-link nav-link">reactShallowStrictEqual</a><div>a unit testing helper for React components
 <p>performs a <strong>shallow</strong> render of <code>actual</code> and compares the result to
 <code>expected</code></p>
 <p>uses the native Node.js
 <a href="https://nodejs.org/api/assert.html#assert_assert_strictequal_actual_expected_message">assert.strictEqual</a>
 to perform the assertion</p>
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">actual<span class="token punctuation">:</span> ReactNode
+expected<span class="token punctuation">:</span> ReactNode
+message<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?</code></pre><h4>Throws</h4><pre class="language-flow"><code class="language-flow">AssertionError <span class="token comment">// test failure</span></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token comment">// MyButton.js</span>
+<span class="token keyword">import</span> classNames <span class="token keyword">from</span> <span class="token string">'classnames'</span>
 
- 
-  
-    <div class='pre p1 fill-light mt0'>reactShallowStrictEqual</div>
-   
-  
-  
+<span class="token keyword">export</span> <span class="token keyword">default</span> <span class="token punctuation">(</span><span class="token punctuation">{</span>children<span class="token punctuation">,</span> className<span class="token punctuation">,</span> <span class="token operator">...</span>props<span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">(</span>
+  <span class="token operator">&lt;</span>button className<span class="token operator">=</span><span class="token punctuation">{</span><span class="token function">classNames</span><span class="token punctuation">(</span><span class="token string">'my-button'</span><span class="token punctuation">,</span> className<span class="token punctuation">)</span><span class="token punctuation">}</span> <span class="token punctuation">{</span><span class="token operator">...</span>props<span class="token punctuation">}</span><span class="token operator">></span><span class="token punctuation">{</span>children<span class="token punctuation">}</span><span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span>
+<span class="token punctuation">)</span></code></pre><pre class="language-flow"><code class="language-flow"><span class="token comment">// MyButton.test.js</span>
+<span class="token keyword">import</span> reactShallowStrictEqual <span class="token keyword">from</span> <span class="token string">'secondwheel/reactShallowStrictEqual'</span>
+<span class="token keyword">import</span> MyButton <span class="token keyword">from</span> <span class="token string">'./MyButton'</span>
 
-  
-  
-  
-  
-  
-  
+<span class="token function">describe</span><span class="token punctuation">(</span><span class="token string">'MyButton'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+  <span class="token function">it</span><span class="token punctuation">(</span><span class="token string">'should render predictable result'</span><span class="token punctuation">,</span> <span class="token punctuation">(</span><span class="token punctuation">)</span> <span class="token operator">=></span> <span class="token punctuation">{</span>
+    <span class="token function">reactShallowStrictEqual</span><span class="token punctuation">(</span>
+      <span class="token punctuation">(</span><span class="token operator">&lt;</span>MyButton className<span class="token operator">=</span><span class="token string">"test-class"</span> id<span class="token operator">=</span><span class="token string">"test-id"</span><span class="token operator">></span>test children<span class="token operator">&lt;</span><span class="token operator">/</span>MyButton<span class="token operator">></span><span class="token punctuation">)</span><span class="token punctuation">,</span>
+      <span class="token punctuation">(</span><span class="token operator">&lt;</span>button className<span class="token operator">=</span><span class="token string">"my-button test-class"</span> id<span class="token operator">=</span><span class="token string">"test-id"</span><span class="token operator">></span>test children<span class="token operator">&lt;</span><span class="token operator">/</span>button<span class="token operator">></span><span class="token punctuation">)</span>
+    <span class="token punctuation">)</span>
+  <span class="token punctuation">}</span><span class="token punctuation">)</span>
+<span class="token punctuation">}</span><span class="token punctuation">)</span></code></pre></section></article></section><section id="misc"><a href="#misc" class="section-link gray-link nav-link">Misc</a><div>
+</div><article class="shift"><section id="cookie"><a href="#cookie" class="section-link gray-link nav-link">cookie</a><div>tools for working with cookies
+</div><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> type <span class="token punctuation">{</span> CookieOptions<span class="token punctuation">,</span> $Response<span class="token punctuation">,</span> $Request <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'express'</span>
 
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>actual</span> <code class='quiet'>(ReactNode)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>expected</span> <code class='quiet'>(ReactNode)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>message</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>?)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
+<span class="token keyword">export</span> type Options <span class="token operator">=</span> <span class="token punctuation">{</span>
+  req<span class="token operator">?</span><span class="token punctuation">:</span> $Request<span class="token punctuation">;</span>
+  res<span class="token operator">?</span><span class="token punctuation">:</span> $Response<span class="token punctuation">;</span>
+  <span class="token operator">...</span>$Exact<span class="token operator">&lt;</span>CookieOptions<span class="token operator">></span><span class="token punctuation">;</span>
+<span class="token punctuation">}</span></code></pre><article class="shift"><section id="cookiesetcookie"><a href="#cookiesetcookie" class="section-link gray-link nav-link">setCookie</a><div>sets a cookie
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">name<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+value<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+options<span class="token punctuation">:</span> Options?</code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> setCookie <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/cookie'</span>
 
-  
+<span class="token function">setCookie</span><span class="token punctuation">(</span><span class="token string">'cookie-name'</span><span class="token punctuation">,</span> <span class="token string">'cookie-value'</span><span class="token punctuation">)</span>               <span class="token comment">// browser</span>
+<span class="token function">setCookie</span><span class="token punctuation">(</span><span class="token string">'cookie-name'</span><span class="token punctuation">,</span> <span class="token string">'cookie-value'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> req<span class="token punctuation">,</span> res <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// server</span></code></pre></section><section id="cookiesetsessioncookie"><a href="#cookiesetsessioncookie" class="section-link gray-link nav-link">setSessionCookie</a><div>sets a session (temporary) cookie
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">name<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+value<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+options<span class="token punctuation">:</span> Options?</code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> setSessionCookie <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/cookie'</span>
 
-  
+<span class="token function">setSessionCookie</span><span class="token punctuation">(</span><span class="token string">'cookie-name'</span><span class="token punctuation">,</span> <span class="token string">'cookie-value'</span><span class="token punctuation">)</span>               <span class="token comment">// browser</span>
+<span class="token function">setSessionCookie</span><span class="token punctuation">(</span><span class="token string">'cookie-name'</span><span class="token punctuation">,</span> <span class="token string">'cookie-value'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> req<span class="token punctuation">,</span> res <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// server</span></code></pre></section><section id="cookiegetcookie"><a href="#cookiegetcookie" class="section-link gray-link nav-link">getCookie</a><div>retrieves a cookie by name
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">name<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+options<span class="token punctuation">:</span> Options?</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow"><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> getCookie <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/cookie'</span>
 
-  
-    <div class='py1 quiet mt1 prose-big'>Throws</div>
-    <ul>
-      
-        <li>AssertionError: test failure
-</li>
-      
-    </ul>
-  
+<span class="token keyword">const</span> cookieValue <span class="token operator">=</span> <span class="token function">getCookie</span><span class="token punctuation">(</span><span class="token string">'cookie-name'</span><span class="token punctuation">)</span>               <span class="token comment">// browser</span>
+<span class="token keyword">const</span> cookieValue <span class="token operator">=</span> <span class="token function">getCookie</span><span class="token punctuation">(</span><span class="token string">'cookie-name'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> req<span class="token punctuation">,</span> res <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// server</span></code></pre></section><section id="cookieremovecookie"><a href="#cookieremovecookie" class="section-link gray-link nav-link">removeCookie</a><div>removes a cookie
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">name<span class="token punctuation">:</span> <a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
+options<span class="token punctuation">:</span> Options?</code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> removeCookie <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/cookie'</span>
 
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// MyButton.js</span>
-<span class="hljs-keyword">import</span> classNames <span class="hljs-keyword">from</span> <span class="hljs-string">'classnames'</span>
+<span class="token function">removeCookie</span><span class="token punctuation">(</span><span class="token string">'cookie-name'</span><span class="token punctuation">)</span>               <span class="token comment">// browser</span>
+<span class="token function">removeCookie</span><span class="token punctuation">(</span><span class="token string">'cookie-name'</span><span class="token punctuation">,</span> <span class="token punctuation">{</span> req<span class="token punctuation">,</span> res <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// server</span></code></pre></section><section id="cookiesetreturnto"><a href="#cookiesetreturnto" class="section-link gray-link nav-link">setReturnTo</a><div>sets the "return to" value (current URL) into a session cookie
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">options<span class="token punctuation">:</span> Options?</code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> setReturnTo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/cookie'</span>
 
-<span class="hljs-keyword">export</span> <span class="hljs-keyword">default</span> ({children, className, ...props}) =&gt; (
-  <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">className</span>=<span class="hljs-string">{classNames(</span>'<span class="hljs-attr">my-button</span>', <span class="hljs-attr">className</span>)} {<span class="hljs-attr">...props</span>}&gt;</span>{children}<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>
-)</pre>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-comment">// MyButton.test.js</span>
-<span class="hljs-keyword">import</span> reactShallowStrictEqual <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/reactShallowStrictEqual'</span>
-<span class="hljs-keyword">import</span> MyButton <span class="hljs-keyword">from</span> <span class="hljs-string">'./MyButton'</span>
+<span class="token function">setReturnTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>             <span class="token comment">// browser</span>
+<span class="token function">setReturnTo</span><span class="token punctuation">(</span><span class="token punctuation">{</span> req<span class="token punctuation">,</span> res <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// server</span></code></pre></section><section id="cookiegetreturnto"><a href="#cookiegetreturnto" class="section-link gray-link nav-link">getReturnTo</a><div>returns and removes the "return to" value
+</div><h4>Parameters</h4><pre class="language-flow"><code class="language-flow">options<span class="token punctuation">:</span> Options?</code></pre><h4>Returns</h4><pre class="language-flow"><code class="language-flow"><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code></pre><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> getReturnTo <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/cookie'</span>
 
-describe(<span class="hljs-string">'MyButton'</span>, () =&gt; {
-  it(<span class="hljs-string">'should render predictable result'</span>, () =&gt; {
-    reactShallowStrictEqual(
-      (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">MyButton</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"test-class"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"test-id"</span>&gt;</span>test children<span class="hljs-tag">&lt;/<span class="hljs-name">MyButton</span>&gt;</span></span>),
-      (<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-name">button</span> <span class="hljs-attr">className</span>=<span class="hljs-string">"my-button test-class"</span> <span class="hljs-attr">id</span>=<span class="hljs-string">"test-id"</span>&gt;</span>test children<span class="hljs-tag">&lt;/<span class="hljs-name">button</span>&gt;</span></span>)
-    )
+<span class="token keyword">const</span> cookieValue <span class="token operator">=</span> <span class="token function">getReturnTo</span><span class="token punctuation">(</span><span class="token punctuation">)</span>             <span class="token comment">// browser</span>
+<span class="token keyword">const</span> cookieValue <span class="token operator">=</span> <span class="token function">getReturnTo</span><span class="token punctuation">(</span><span class="token punctuation">{</span> req<span class="token punctuation">,</span> res <span class="token punctuation">}</span><span class="token punctuation">)</span> <span class="token comment">// server</span></code></pre></section></article></section><section id="constants"><a href="#constants" class="section-link gray-link nav-link">constants</a><div></div><article class="shift"><section id="constantsisnode"><a href="#constantsisnode" class="section-link gray-link nav-link">isNode</a><div>truthy when running in Node.js
+</div><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> isNode <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/constants'</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>isNode<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// Node.js</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment">// not Node.js</span>
+<span class="token punctuation">}</span></code></pre></section><section id="constantsisbrowser"><a href="#constantsisbrowser" class="section-link gray-link nav-link">isBrowser</a><div>truthy when running in a browser
+</div><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> isBrowser <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/constants'</span>
+
+<span class="token keyword">if</span> <span class="token punctuation">(</span>isBrowser<span class="token punctuation">)</span> <span class="token punctuation">{</span>
+  <span class="token comment">// browser</span>
+<span class="token punctuation">}</span> <span class="token keyword">else</span> <span class="token punctuation">{</span>
+  <span class="token comment">// not browser</span>
+<span class="token punctuation">}</span></code></pre></section><section id="constantsnativewebsocket"><a href="#constantsnativewebsocket" class="section-link gray-link nav-link">NativeWebSocket</a><div>contains 
+<code>WebSocket</code>
+ or 
+<code>MozWebSocket</code>
+ from the global scope if available
+</div><h4>Examples</h4><pre class="language-flow"><code class="language-flow"><span class="token keyword">import</span> <span class="token punctuation">{</span> NativeWebSocket <span class="token punctuation">}</span> <span class="token keyword">from</span> <span class="token string">'secondwheel/constants'</span></code></pre></section></article></section><section id="theme"><a href="#theme" class="section-link gray-link nav-link">theme</a><div>a 
+<a href="http://documentation.js.org/">documentation.js</a>
+ theme used to
+generate this documentation
+
+<br />
+
+
+<br />
+
+
+<em>Example usage</em>
+<ol>
+<li>install this package - <code>yarn add secondwheel</code></li>
+<li>add a script to <em>package.json</em></li>
+</ol>
+<pre class="language-json"><code class="language-json"><span class="token punctuation">{</span>
+<span class="token property">  "scripts"</span><span class="token operator">:</span><span class="token punctuation"> {</span>
+<span class="token property">    "docs"</span><span class="token operator">:</span><span class="token string"> "documentation build *.js -f html -t node_modules/secondwheel/theme -o docs"</span>
+<span class="token punctuation">  }</span>
+<span class="token punctuation">}</span></code></pre>
+</div></section></article></section></article></main></div><script>
+var links = Array.from(document.getElementsByClassName('aside-link'))
+function handleHashChange () {
+  links.forEach(function (link) {
+    link.classList.remove('active')
   })
-})</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='subscription'>
-      subscription
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>tools for working with GraphQL subscriptions</p>
-<p>works with <code>Payload</code> defined as</p>
-<pre class='hljs'><span class="hljs-keyword">export</span> type Payload = {
-  <span class="hljs-attr">mutation</span>: <span class="hljs-string">'CREATED'</span> | <span class="hljs-string">'UPDATED'</span> | <span class="hljs-string">'DELETED'</span>;
-  node: <span class="hljs-built_in">Object</span> | <span class="hljs-built_in">Object</span>[];
-}</pre>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>subscription</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Static Members</div>
-    <div class="clearfix">
-  
-    <div class='border-bottom' id='subscriptioncreated'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>created</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>updates object to reflect created nodes at path</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>created</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>result</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>path</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>payload</span> <code class='quiet'>(Payload)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { created } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/subscription'</span>
-
-<span class="hljs-keyword">const</span> newData = created(data, <span class="hljs-string">'path.to.nested.list'</span>, payload)</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='subscriptionupdated'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>updated</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>updates object to reflect updated nodes at path</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>updated</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>result</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>path</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>payload</span> <code class='quiet'>(Payload)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { updated } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/subscription'</span>
-
-<span class="hljs-keyword">const</span> newData = updated(data, <span class="hljs-string">'path'</span>, payload)</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-    <div class='border-bottom' id='subscriptiondeleted'>
-      <div class="clearfix small pointer toggle-sibling">
-        <div class="py1 contain">
-            <a class='icon pin-right py1 dark-link caret-right'>▸</a>
-            <span class='code strong strong truncate'>deleted</span>
-        </div>
-      </div>
-      <div class="clearfix display-none toggle-target">
-        <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-
-  <p>updates object to reflect deleted nodes at path</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>deleted</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>result</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>path</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>payload</span> <code class='quiet'>(Payload)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></code>
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> { deleted } <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/subscription'</span>
-
-<span class="hljs-keyword">const</span> newData = deleted(data, <span class="hljs-string">'path'</span>, payload)</pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-      </div>
-    </div>
-  
-</div>
-
-  
-
-  
-
-  
-</section>
-
-        
-          
-          <section class='p2 mb2 clearfix bg-white minishadow'>
-
-  
-  <div class='clearfix'>
-    
-    <h3 class='fl m0' id='template'>
-      template
-    </h3>
-    
-    
-  </div>
-  
-
-  <p>a wrapper around
-<a href="https://lodash.com/docs/4.17.11#template">lodash/template</a>,
-which caches compiled templates in memory</p>
-
- 
-  
-    <div class='pre p1 fill-light mt0'>template</div>
-   
-  
-  
-
-  
-  
-  
-  
-  
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Parameters</div>
-    <div class='prose'>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>tpl</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a>
-            = <code>&#39;&#39;</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-        <div class='space-bottom0'>
-          <div>
-            <span class='code bold'>data</span> <code class='quiet'>(<a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a>
-            = <code>{}</code>)</code>
-	    
-          </div>
-          
-        </div>
-      
-    </div>
-  
-
-  
-
-  
-    
-      <div class='py1 quiet mt1 prose-big'>Returns</div>
-      <code><a href="https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String">string</a></code>
-    
-  
-
-  
-
-  
-    <div class='py1 quiet mt1 prose-big'>Example</div>
-    
-      
-      <pre class='p1 overflow-auto round fill-light'><span class="hljs-keyword">import</span> template <span class="hljs-keyword">from</span> <span class="hljs-string">'secondwheel/template'</span>
-
-template(<span class="hljs-string">'hello &lt;%= name %&gt;'</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">'foo'</span> })
-template(<span class="hljs-string">'hello &lt;%= name %&gt;'</span>, { <span class="hljs-attr">name</span>: <span class="hljs-string">'bar'</span> }) <span class="hljs-comment">// only compiled once</span></pre>
-    
-  
-
-  
-
-  
-
-  
-</section>
-
-        
-      </div>
-    </div>
-  <script src='assets/anchor.js'></script>
-  <script src='assets/split.js'></script>
-  <script src='assets/site.js'></script>
-</body>
-</html>
+  links.forEach(function (link) {
+    if (link.dataset.rbEventKey === location.hash) {
+      while(link.classList.contains('aside-link')) {
+        link.classList.add('active')
+        link = link.parentNode.parentNode.parentNode.firstElementChild
+      }
+    }
+  })
+}
+addEventListener('hashchange', handleHashChange, false)
+handleHashChange()
+</script></body></html>

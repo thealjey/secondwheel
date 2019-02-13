@@ -74,8 +74,7 @@ export type Options = {
  * - provides static methods, overriding which any aspect of the default
  *   functionality can be changed
  *
- * #### Types
- * ```js
+ * @example
  * export type Options = {
  *
  *   uri?: string = '/graphql';
@@ -117,8 +116,6 @@ export type Options = {
  *   batchKey?: () => string;
  *
  * }
- * ```
- *
  * @example
  * import ApolloClient from 'secondwheel/ApolloClient'
  *
@@ -126,7 +123,7 @@ export type Options = {
  * const client = new ApolloClient({
  *   uri: 'http://localhost:4000',
  *   wsUri: 'ws://localhost:4000'
- * });
+ * })
  */
 class ApolloClient extends Client {
   constructor (options/*: Options */ = {}) {

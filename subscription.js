@@ -17,14 +17,12 @@ const tail = require('lodash/tail')
 /**
  * tools for working with GraphQL subscriptions
  *
- * works with `Payload` defined as
- * ```js
+ * @namespace subscription
+ * @example
  * export type Payload = {
  *   mutation: 'CREATED' | 'UPDATED' | 'DELETED';
  *   node: Object | Object[];
  * }
- * ```
- * @namespace subscription
  */
 /*::
 export type Payload = {

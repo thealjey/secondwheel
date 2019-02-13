@@ -11,8 +11,8 @@ const MyButton = ({ children, className, ...props }) =>
     ...props
   }, ...children)
 
-describe('MyButton', () => {
-  it('should render predictable result', () => {
+describe('reactShallowStrictEqual', () => {
+  it('should not throw', () => {
     reactShallowStrictEqual(
       createElement(MyButton, {
         className: 'test-class',
