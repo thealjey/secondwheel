@@ -17,6 +17,7 @@ toc:
   - name: Test Assertions
     children:
       - reactShallowStrictEqual
+      - matching
   - name: Misc
     children:
       - cookie
