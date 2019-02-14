@@ -19,6 +19,7 @@ toc:
       - reactShallowStrictEqual
       - matching
       - assert
+      - assertArray
   - name: Misc
     children:
       - cookie
