@@ -5,6 +5,7 @@ const map = require('lodash/map')
 const trim = require('lodash/trim')
 const split = require('lodash/split')
 const reject = require('lodash/reject')
+const replace = require('lodash/replace')
 const compact = require('lodash/compact')
 const toLower = require('lodash/toLower')
 const memoize = require('lodash/memoize')
@@ -78,7 +79,10 @@ const transformElements = (elements = []) =>
   compact(
     map(
       reject(elements, ['type', 'comment']),
-      el => el.type === 'text' ? trim(el.data) : transformElement(el)
+      el =>
+        el.type === 'text'
+          ? replace(trim(el.data), /&nbsp;/g, ' ')
+          : transformElement(el)
     )
   )
 

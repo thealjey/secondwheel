@@ -15,17 +15,18 @@ const merge = require('lodash/merge')
 const tail = require('lodash/tail')
 
 /**
- * tools for working with GraphQL subscriptions
- *
- * @namespace subscription
+ * {@link cookie} configuration options
+ * @typedef {Object} SubscriptionPayload
+ * @param {'CREATED' | 'UPDATED' | 'DELETED'} mutation
+ * @param {Object | Object[]} node
  * @example
- * export type Payload = {
- *   mutation: 'CREATED' | 'UPDATED' | 'DELETED';
- *   node: Object | Object[];
- * }
+ * import type { SubscriptionPayload } from 'secondwheel/subscription'
  */
+
+/** @namespace subscription */
+
 /*::
-export type Payload = {
+export type SubscriptionPayload = {
   mutation: 'CREATED' | 'UPDATED' | 'DELETED';
   node: Object | Object[];
 }
@@ -84,7 +85,7 @@ const updateList = (
 const created = (
   result/*: Object */,
   path/*: string */,
-  payload/*: Payload */
+  payload/*: SubscriptionPayload */
 )/*: Object */ =>
   payload.mutation === 'CREATED'
     ? updateList(result, path, arr => concat(arr, payload.node))
@@ -104,7 +105,7 @@ exports.created = created
 const updated = (
   result/*: Object */,
   path/*: string */,
-  payload/*: Payload */
+  payload/*: SubscriptionPayload */
 )/*: Object */ => {
   let clone
 
@@ -132,7 +133,7 @@ exports.updated = updated
 const deleted = (
   result/*: Object */,
   path/*: string */,
-  payload/*: Payload */
+  payload/*: SubscriptionPayload */
 )/*: Object */ => {
   let ids
 

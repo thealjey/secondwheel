@@ -1,11 +1,11 @@
 # secondwheel
 unopinionated library of functions for those tired of reinventing the wheel
 
-[![Build Status](https://travis-ci.com/thealjey/secondwheel.svg?branch=master)](https://travis-ci.com/thealjey/secondwheel)
+[![Build Status](https://travis-ci.com/thealjey/secondwheel.svg?branch=master)](https://travis-ci.com/thealjey/secondwheel)&nbsp;
 [![Coverage Status](https://coveralls.io/repos/github/thealjey/secondwheel/badge.svg?branch=master)](https://coveralls.io/github/thealjey/secondwheel?branch=master)
 
 ## Philosophy:
-1. use [Yarn](https://yarnpkg.com/en/) for everything
+1. use&nbsp;[Yarn](https://yarnpkg.com/en/)&nbsp;for everything
 1. tiny, reusable, pure & side effect free functions (when possible),
    following a single responsibility principle
 1. no transpilation

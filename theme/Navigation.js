@@ -12,7 +12,7 @@ const Navigation = ({ comments }/*: Object */) =>
         const hash = `#${slug(namespace || name)}`
 
         return h('div', { key, className: 'nav-item' },
-          h('a', { href: hash, 'data-rb-event-key': hash, className: 'aside-link gray-link nav-link' }, name),
+          h('a', { href: hash, 'data-rb-event-key': hash, className: 'aside-link js-link gray-link nav-link' }, name),
           ...compact(map(members, (comments, key) =>
             h(Navigation, { key, comments })
           ))

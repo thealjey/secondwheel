@@ -3,6 +3,7 @@
 const { createElement: h, Fragment } = require('react')
 const Header = require('./Header')
 const Navigation = require('./Navigation')
+const Frontpage = require('./Frontpage')
 const Content = require('./Content')
 
 module.exports = ({ comments, options }/*: Object */) =>
@@ -12,6 +13,7 @@ module.exports = ({ comments, options }/*: Object */) =>
       h(Navigation, { comments })
     ),
     h('main', null,
+      h(Frontpage),
       h(Content, { comments, options })
     )
   )

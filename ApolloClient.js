@@ -35,7 +35,7 @@ const defaultErrorCallback = ({ graphQLErrors, networkError }) => {
 import ApolloLink from 'apollo-link'
 import { ApolloCache } from 'apollo-cache'
 
-export type Options = {
+export type ApolloClientOptions = {
   uri?: string;
   browserUri?: string;
   serverUri?: string;
@@ -64,6 +64,50 @@ export type Options = {
 */
 
 /**
+ * `ApolloLink` is a standard interface for modifying control flow of GraphQL
+ * requests and fetching GraphQL results.
+ *
+ * @external ApolloLink
+ * @see {@link https://www.apollographql.com/docs/link/index.html|ApolloLink}
+ */
+
+/**
+ * @external ApolloCache
+ * @see {@link https://www.apollographql.com/docs/angular/basics/caching.html|ApolloCache}
+ */
+
+/**
+ * {@link ApolloClient} configuration options
+ * @typedef {Object} ApolloClientOptions
+ * @param {string} [uri='/graphql']
+ * @param {string} [browserUri=uri] - used in the browser
+ * @param {string} [serverUri=browserUri] - used in Node.js
+ * @param {string} [wsUri] - if provided a WebSocketLink will be configured
+ * @param {Object} [cache={}] - use on the client to restore server state
+ * @param {Function} [onError] - by default prints errors to console
+ * @param {number} [ssrForceFetchDelay] - see {@link https://www.apollographql.com/docs/react/api/apollo-client.html|apollo-client}
+ * @param {boolean} [connectToDevTools] - see {@link https://www.apollographql.com/docs/react/api/apollo-client.html|apollo-client}
+ * @param {boolean} [queryDeduplication] - see {@link https://www.apollographql.com/docs/react/api/apollo-client.html|apollo-client}
+ * @param {string} [name] - see {@link https://www.apollographql.com/docs/react/api/apollo-client.html|apollo-client}
+ * @param {string} [version] - see {@link https://www.apollographql.com/docs/react/api/apollo-client.html|apollo-client}
+ * @param {Object} [defaultOptions] - see {@link https://www.apollographql.com/docs/react/api/apollo-client.html|apollo-client}
+ * @param {Object} [wsOptions={ reconnect: true }] - see {@link https://www.npmjs.com/package/apollo-link-ws|apollo-link-ws}
+ * @param {WebSocket} [webSocketImpl] - see {@link https://www.npmjs.com/package/apollo-link-ws|apollo-link-ws}
+ * @param {Object} [delay] - see {@link https://www.npmjs.com/package/apollo-link-retry|apollo-link-retry}
+ * @param {Object} [attempts] - see {@link https://www.npmjs.com/package/apollo-link-retry|apollo-link-retry}
+ * @param {boolean} [includeExtensions] - see {@link https://www.npmjs.com/package/apollo-link-batch-http|apollo-link-batch-http}
+ * @param {Object} [headers={}] - see {@link https://www.npmjs.com/package/apollo-link-batch-http|apollo-link-batch-http}
+ * @param {string} [credentials='same-origin'] - see {@link https://www.npmjs.com/package/apollo-link-batch-http|apollo-link-batch-http}
+ * @param {Object} [fetchOptions={}] - see {@link https://www.npmjs.com/package/apollo-link-batch-http|apollo-link-batch-http}
+ * @param {boolean} [useGETForQueries] - see {@link https://www.npmjs.com/package/apollo-link-batch-http|apollo-link-batch-http}
+ * @param {number} [batchMax] - see {@link https://www.npmjs.com/package/apollo-link-batch-http|apollo-link-batch-http}
+ * @param {number} [batchInterval] - see {@link https://www.npmjs.com/package/apollo-link-batch-http|apollo-link-batch-http}
+ * @param {Function} [batchKey] - see {@link https://www.npmjs.com/package/apollo-link-batch-http|apollo-link-batch-http}
+ * @example
+ * import type { ApolloClientOptions } from 'secondwheel/ApolloClient'
+ */
+
+/**
  * - like {@link https://www.npmjs.com/package/apollo-boost|apollo-boost}, but
  *   allows for a greater degree of configurability
  * - augments {@link https://www.npmjs.com/package/apollo-client|apollo-client}
@@ -75,48 +119,6 @@ export type Options = {
  *   functionality can be changed
  *
  * @example
- * export type Options = {
- *
- *   uri?: string = '/graphql';
- *   // used in the browser
- *   browserUri?: string = uri;
- *   // used in Node.js
- *   serverUri?: string = browserUri;
- *   // if provided a WebSocketLink will be configured
- *   wsUri?: string;
- *   // use on the client to restore server state, no the need to re-run queries
- *   cache?: Object = {};
- *   // by default prints errors to console
- *   onError?: error => void;
- *
- *   // "apollo-client" options
- *   ssrForceFetchDelay?: number;
- *   connectToDevTools?: boolean;
- *   queryDeduplication?: boolean;
- *   name?: string;
- *   version?: string;
- *   defaultOptions?: { watchQuery?: Object; query?: Object; mutate?: Object; };
- *
- *   // "apollo-link-ws" options
- *   wsOptions?: Object = { reconnect: true };
- *   webSocketImpl?: WebSocket;
- *
- *   // "apollo-link-retry" options
- *   delay?: { initial?: number; max?: number; jitter?: number; };
- *   attempts?: { max?: number; retryIf?: (error, operation) => boolean; };
- *
- *   // "apollo-link-batch-http" options
- *   includeExtensions?: boolean;
- *   headers?: Object = {};
- *   credentials?: string = 'same-origin';
- *   fetchOptions?: Object = {};
- *   useGETForQueries?: boolean;
- *   batchMax?: number;
- *   batchInterval?: number;
- *   batchKey?: () => string;
- *
- * }
- * @example
  * import ApolloClient from 'secondwheel/ApolloClient'
  *
  * // connecting to a simple "graphql-yoga" server with default options
@@ -126,7 +128,7 @@ export type Options = {
  * })
  */
 class ApolloClient extends Client {
-  constructor (options/*: Options */ = {}) {
+  constructor (options/*: ApolloClientOptions */ = {}) {
     const {
       ssrForceFetchDelay,
       connectToDevTools,
@@ -150,7 +152,7 @@ class ApolloClient extends Client {
   }
 
   /** creates the final instance of ApolloLink */
-  static createLink (options/*: Options */)/*: ApolloLink */ {
+  static createLink (options/*: ApolloClientOptions */)/*: ApolloLink */ {
     const httpLink = ApolloClient.createHttpLink(options)
     const wsLink = ApolloClient.createWSLink(options)
 
@@ -158,19 +160,19 @@ class ApolloClient extends Client {
   }
 
   /** creates an instance of ApolloCache */
-  static createCache (options/*: Options */)/*: ApolloCache */ {
+  static createCache (options/*: ApolloClientOptions */)/*: ApolloCache */ {
     const { cache = {} } = options
 
     return new InMemoryCache().restore(cache)
   }
 
   /** creates an instance of ApolloLink */
-  static createHttpLink (options/*: Options */)/*: ApolloLink */ {
+  static createHttpLink (options/*: ApolloClientOptions */)/*: ApolloLink */ {
     return from(compact(ApolloClient.getLinks(options)))
   }
 
   /** creates an instance of WebSocketLink */
-  static createWSLink (options/*: Options */)/*: ?ApolloLink */ {
+  static createWSLink (options/*: ApolloClientOptions */)/*: ?ApolloLink */ {
     const { wsUri, wsOptions = defaultWSOptions, webSocketImpl } = options
 
     return wsUri && (webSocketImpl || NativeWebSocket) && new WebSocketLink({
@@ -184,7 +186,7 @@ class ApolloClient extends Client {
    * returns an array of ApolloLink to be used in the creation of the final link
    * falsy values are filtered out
    */
-  static getLinks (options/*: Options */)/*: Array<?ApolloLink> */ {
+  static getLinks (options/*: ApolloClientOptions */)/*: Array<?ApolloLink> */ {
     return [
       ApolloClient.createErrorLink(options),
       ApolloClient.createRetryLink(options),
@@ -193,21 +195,21 @@ class ApolloClient extends Client {
   }
 
   /** creates an instance of ErrorLink */
-  static createErrorLink (options/*: Options */)/*: ?ApolloLink */ {
+  static createErrorLink (options/*: ApolloClientOptions */)/*: ?ApolloLink */ {
     const { onError: errorCallback = defaultErrorCallback } = options
 
     return onError(errorCallback)
   }
 
   /** creates an instance of RetryLink */
-  static createRetryLink (options/*: Options */)/*: ?ApolloLink */ {
+  static createRetryLink (options/*: ApolloClientOptions */)/*: ?ApolloLink */ {
     const { delay, attempts } = options
 
     return new RetryLink({ delay, attempts })
   }
 
   /** creates an instance of HttpLink */
-  static createBatchLink (options/*: Options */)/*: ?ApolloLink */ {
+  static createBatchLink (options/*: ApolloClientOptions */)/*: ?ApolloLink */ {
     const {
       uri = '/graphql',
       browserUri = uri,

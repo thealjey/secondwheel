@@ -7,26 +7,55 @@ const isDate = require('lodash/isDate')
 const pick = require('lodash/pick')
 
 /**
- * tools for working with cookies
+ * The `req` object represents the HTTP request and has properties for the
+ * request query string, parameters, body, HTTP headers, and so on. In this
+ * documentation and by convention, the object is always referred to as `req`
+ * (and the HTTP response is `res`) but its actual name is determined by the
+ * parameters to the callback function in which you’re working.
  *
- * @namespace cookie
- * @example
- * import type { CookieOptions, $Response, $Request } from 'express'
- *
- * export type Options = {
- *   req?: $Request;
- *   res?: $Response;
- *   ...$Exact<CookieOptions>;
- * }
+ * @external Request
+ * @see {@link http://expressjs.com/en/4x/api.html#req|Request}
  */
 
-/*::
-import type { CookieOptions, $Response, $Request } from 'express'
+/**
+ * The `res` object represents the HTTP response that an Express app sends when
+ * it gets an HTTP request.
+ *
+ * In this documentation and by convention, the object is always referred to as
+ * `res` (and the HTTP request is `req`) but its actual name is determined by
+ * the parameters to the callback function in which you’re working.
+ *
+ * @external Response
+ * @see {@link http://expressjs.com/en/4x/api.html#res|Response}
+ */
 
-export type Options = {
+/**
+ * {@link cookie} configuration options
+ * @typedef {Object} CookieOptions
+ * @param {Request} [req]
+ * @param {Response} [res]
+ * @param {string} [domain=req.hostname || window.location.host] - see {@link http://expressjs.com/en/4x/api.html#res.cookie|res.cookie}
+ * @param {Function} [encode] - see {@link http://expressjs.com/en/4x/api.html#res.cookie|res.cookie}
+ * @param {Date} [expires] - see {@link http://expressjs.com/en/4x/api.html#res.cookie|res.cookie}
+ * @param {boolean} [httpOnly] - see {@link http://expressjs.com/en/4x/api.html#res.cookie|res.cookie}
+ * @param {number} [maxAge] - see {@link http://expressjs.com/en/4x/api.html#res.cookie|res.cookie}
+ * @param {string} [path='/'] - see {@link http://expressjs.com/en/4x/api.html#res.cookie|res.cookie}
+ * @param {boolean} [secure] - see {@link http://expressjs.com/en/4x/api.html#res.cookie|res.cookie}
+ * @param {boolean} [signed] - see {@link http://expressjs.com/en/4x/api.html#res.cookie|res.cookie}
+ * @param {boolean | string} [sameSite] - see {@link http://expressjs.com/en/4x/api.html#res.cookie|res.cookie}
+ * @example
+ * import type { CookieOptions } from 'secondwheel/cookie'
+ */
+
+/** @namespace cookie */
+
+/*::
+import type { CookieOptions as Options, $Response, $Request } from 'express'
+
+export type CookieOptions = {
   req?: $Request;
   res?: $Response;
-  ...$Exact<CookieOptions>;
+  ...$Exact<Options>;
 }
 */
 
@@ -44,7 +73,7 @@ const allowed = [
   'signed'
 ]
 
-const getConfig = (options/*: ?Options */)/*: Options */ => {
+const getConfig = (options/*: ?CookieOptions */)/*: CookieOptions */ => {
   const { req, res, ...rest } = pick(options, allowed)
 
   return {
@@ -54,7 +83,7 @@ const getConfig = (options/*: ?Options */)/*: Options */ => {
   }
 }
 
-const serialize = (options/*: ?Options */)/*: string */ => reduce(
+const serialize = (options/*: ?CookieOptions */)/*: string */ => reduce(
   options,
   (result, value, key) =>
     `${result}${kebabCase(String(key))}=${isDate(value) ? value.toUTCString() : value};`,
@@ -64,7 +93,7 @@ const serialize = (options/*: ?Options */)/*: string */ => reduce(
 function set (
   name/*: string */,
   value/*: string */,
-  options/*: ?Options */
+  options/*: ?CookieOptions */
 ) {
   const res = get(options, 'res')
   const config = getConfig(options)
@@ -89,7 +118,7 @@ function set (
 const setCookie = (
   name/*: string */,
   value/*: string */,
-  options/*: ?Options */
+  options/*: ?CookieOptions */
 ) => set(name, value, { maxAge: 10 ** 10, ...options })
 
 exports.setCookie = setCookie
@@ -107,7 +136,7 @@ exports.setCookie = setCookie
 const setSessionCookie = (
   name/*: string */,
   value/*: string */,
-  options/*: ?Options */
+  options/*: ?CookieOptions */
 ) => set(name, value, options)
 
 exports.setSessionCookie = setSessionCookie
@@ -124,7 +153,7 @@ exports.setSessionCookie = setSessionCookie
  */
 const getCookie = (
   name/*: string */,
-  options/*: ?Options */
+  options/*: ?CookieOptions */
 )/*: string */ => {
   const req = get(options, 'req')
   let match
@@ -148,7 +177,7 @@ exports.getCookie = getCookie
  * removeCookie('cookie-name')               // browser
  * removeCookie('cookie-name', { req, res }) // server
  */
-const removeCookie = (name/*: string */, options/*: ?Options */) => {
+const removeCookie = (name/*: string */, options/*: ?CookieOptions */) => {
   const res = get(options, 'res')
   const config = getConfig({ expires, ...options })
 
@@ -171,7 +200,7 @@ exports.removeCookie = removeCookie
  * setReturnTo()             // browser
  * setReturnTo({ req, res }) // server
  */
-const setReturnTo = (options/*: ?Options */) => exports.setSessionCookie(
+const setReturnTo = (options/*: ?CookieOptions */) => exports.setSessionCookie(
   'return-to',
   get(options, 'req.originalUrl') || window.location.href,
   options
@@ -189,7 +218,7 @@ exports.setReturnTo = setReturnTo
  * const cookieValue = getReturnTo()             // browser
  * const cookieValue = getReturnTo({ req, res }) // server
  */
-const getReturnTo = (options/*: ?Options */)/*: string */ => {
+const getReturnTo = (options/*: ?CookieOptions */)/*: string */ => {
   const value = getCookie('return-to', options)
 
   removeCookie('return-to', options)

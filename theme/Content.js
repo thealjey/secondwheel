@@ -4,6 +4,8 @@ const { createElement: h, Fragment } = require('react')
 const map = require('lodash/map')
 const get = require('lodash/get')
 const trim = require('lodash/trim')
+const replace = require('lodash/replace')
+const join = require('lodash/join')
 const slug = require('../slug')
 const { LinkerStack, createFormatters } = require('documentation').util
 const { highlight, languages: { javascript } } = require('prismjs')
@@ -13,12 +15,12 @@ let formatters
 
 const getLinkerStack = (comments, options) =>
   linkerStack ||
-  new LinkerStack(options)
-    .namespaceResolver(comments, namespace => `#${slug(namespace)}`)
+  (linkerStack = new LinkerStack(options)
+    .namespaceResolver(comments, namespace => `#${slug(namespace)}`))
 
 const getFormatters = (comments, options) =>
   formatters ||
-  createFormatters(getLinkerStack(comments, options).link)
+  (formatters = createFormatters(getLinkerStack(comments, options).link))
 
 const md = (ast, comments, options) => {
   const firstChild = get(ast, 'children.0')
@@ -56,15 +58,23 @@ const Parameters = ({ title, content, comments, options }) =>
         h('code', {
           className: 'language-flow',
           dangerouslySetInnerHTML: {
-            __html: map(content, ({ name, type, default: defaultVal, description }) => {
-              const desc = trim(md(description, comments, options))
+            __html: join(map(content, ({ name, type, default: defaultVal, description }) => {
+              const desc = replace(trim(md(description, comments, options)), /\n/g, '')
 
-              return highlight(
-                `${name || ''}${name ? ': ' : ''}PlaceholderPrismType${defaultVal ? ' = ' : ''}${defaultVal || ''}${desc.length ? ' // ' : ''}${desc}`,
-                javascript,
-                'flow'
-              ).replace('PlaceholderPrismType', formatType(type, comments, options))
-            }).join('\n')
+              return replace(
+                replace(
+                  highlight(
+                    `${name || ''}${name ? ': ' : ''}PlaceholderPrismType${defaultVal ? ' = ' : ''}${defaultVal || ''}${desc.length ? ' // PlaceholderPrismDescription' : ''}`,
+                    javascript,
+                    'flow'
+                  ),
+                  'PlaceholderPrismType',
+                  formatType(type, comments, options)
+                ),
+                'PlaceholderPrismDescription',
+                desc
+              )
+            }), '\n')
           }
         })
       )]
@@ -74,44 +84,49 @@ const Parameters = ({ title, content, comments, options }) =>
 const Content = ({ comments, options }/*: Object */) =>
   comments.length
     ? h('article', { className: 'shift' },
-      ...map(comments, ({ namespace, name, description, augments, params, returns, throws, examples, sees, members }, key) => {
+      ...map(comments, ({ namespace, name, description, augments, params, properties, returns, throws, examples, sees, members }, key) => {
         const id = slug(namespace || name)
-        const see = trim(map(sees, item => md(item, comments, options)).join(''))
-        const aug = map(augments, ({ name }) => link(name, comments, options)).join(', ')
+        const hash = `#${id}`
+        const see = trim(join(map(sees, item => md(item, comments, options)), ''))
+        const aug = join(map(augments, ({ name }) => link(name, comments, options)), ', ')
+        const desc = trim(md(description, comments, options))
 
-        return h('section', { key, id },
-          h('a', { href: `#${id}`, className: 'section-link gray-link nav-link' }, name),
-          h('div', { dangerouslySetInnerHTML: { __html: md(description, comments, options) } }),
-          h(Section, {
-            title: 'Extends',
-            content: aug.length
-              ? [h('div', { dangerouslySetInnerHTML: { __html: aug } })]
-              : []
-          }),
-          h(Parameters, { title: 'Parameters', content: params, comments, options }),
-          h(Parameters, { title: 'Returns', content: returns, comments, options }),
-          h(Parameters, { title: 'Throws', content: throws, comments, options }),
-          h(Section, {
-            title: 'Examples',
-            content: map(examples, ({ description }, key) =>
-              h('pre', { className: 'language-flow' },
-                h('code', {
-                  className: 'language-flow',
-                  dangerouslySetInnerHTML: {
-                    __html: highlight(description, javascript, 'flow')
-                  }
-                })
+        return h(Fragment, { key },
+          h('a', { id, href: hash, 'data-rb-event-key': hash, className: 'section-link js-link gray-link nav-link' }, name),
+          h('section', null,
+            desc ? h('div', { dangerouslySetInnerHTML: { __html: desc } }) : null,
+            h(Section, {
+              title: 'Examples',
+              content: map(examples, ({ description }, key) =>
+                h('pre', { className: 'language-flow' },
+                  h('code', {
+                    className: 'language-flow',
+                    dangerouslySetInnerHTML: {
+                      __html: highlight(description, javascript, 'flow')
+                    }
+                  })
+                )
               )
+            }),
+            h(Section, {
+              title: 'Extends',
+              content: aug.length
+                ? [h('div', { dangerouslySetInnerHTML: { __html: aug } })]
+                : []
+            }),
+            h(Parameters, { title: 'Parameters', content: params, comments, options }),
+            h(Parameters, { title: 'Properties', content: properties, comments, options }),
+            h(Parameters, { title: 'Returns', content: returns, comments, options }),
+            h(Parameters, { title: 'Throws', content: throws, comments, options }),
+            h(Section, {
+              title: 'See',
+              content: see.length
+                ? [h('div', { dangerouslySetInnerHTML: { __html: see } })]
+                : []
+            }),
+            ...map(members, (comments, key) =>
+              h(Content, { key, comments, options })
             )
-          }),
-          h(Section, {
-            title: 'See',
-            content: see.length
-              ? [h('div', { dangerouslySetInnerHTML: { __html: see } })]
-              : []
-          }),
-          ...map(members, (comments, key) =>
-            h(Content, { key, comments, options })
           )
         )
       }))
