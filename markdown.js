@@ -53,7 +53,7 @@ exports.markdownToArray = markdownToArray
  * import { h } from 'preact'
  * import { h } from 'inferno-hyperscript'
  *
- * markdownToJSX(h, 'hello <%= name %>', { name: 'foo' }) // <p>hello foo</p>
+ * markdownToJSX(h, '# hello <%= name %>', { name: 'foo' }) // <h1>hello foo</h1>
  */
 const markdownToJSX = (
   h/*: Function */,
