@@ -43,7 +43,7 @@ toc:
   - name: Types
     children:
       - AssertionError
-      - ReactNode
+      - ReactElement
       - ApolloLink
       - ApolloCache
       - Request

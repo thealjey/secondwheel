@@ -1,8 +1,10 @@
 /* @flow */
 
 const { describe, it } = require('mocha')
-const { deepStrictEqual } = require('assert')
-const { htmlToArray } = require('../jsx')
+const { deepStrictEqual, strictEqual } = require('assert')
+const { htmlToArray, htmlToJSX } = require('../jsx')
+const { createElement: h, Fragment } = require('react')
+const reactElementToJSXString = require('react-element-to-jsx-string')
 
 describe('jsx', () => {
   it('htmlToArray', () => {
@@ -17,6 +19,21 @@ describe('jsx', () => {
         props: { defaultValue: 'b', style: { backgroundColor: 'red', msTransition: 'all 4s ease' } },
         children: []
       }]
+    )
+  })
+
+  it('htmlToJSX', () => {
+    strictEqual(
+      /* @flowignore */
+      reactElementToJSXString(
+        h(Fragment, null,
+          ...htmlToJSX(h, 'hello <%= name %>', { name: 'world' })
+        )
+      ),
+      /* @flowignore */
+      reactElementToJSXString(
+        h(Fragment, null, 'hello world')
+      )
     )
   })
 })

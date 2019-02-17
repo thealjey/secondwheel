@@ -5,8 +5,6 @@ const map = require('lodash/map')
 const trim = require('lodash/trim')
 const split = require('lodash/split')
 const reject = require('lodash/reject')
-const replace = require('lodash/replace')
-const compact = require('lodash/compact')
 const toLower = require('lodash/toLower')
 const memoize = require('lodash/memoize')
 const isString = require('lodash/isString')
@@ -15,11 +13,7 @@ const transform = require('lodash/transform')
 const { load } = require('cheerio')
 const template = require('./template')
 
-/**
- * tools for working with jsx
- *
- * @namespace jsx
- */
+/** @namespace jsx */
 
 const msPattern = /^-ms-/
 
@@ -76,14 +70,9 @@ const transformElement = ({
 }
 
 const transformElements = (elements = []) =>
-  compact(
-    map(
-      reject(elements, ['type', 'comment']),
-      el =>
-        el.type === 'text'
-          ? replace(trim(el.data), /&nbsp;/g, ' ')
-          : transformElement(el)
-    )
+  map(
+    reject(elements, ['type', 'comment']),
+    el => el.type === 'text' ? el.data : transformElement(el)
   )
 
 /**

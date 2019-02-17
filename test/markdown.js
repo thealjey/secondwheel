@@ -1,27 +1,44 @@
 /* @flow */
 
 const { describe, it } = require('mocha')
-const { strictEqual } = require('assert')
-const { createElement, Fragment } = require('react')
+const { strictEqual, deepStrictEqual } = require('assert')
+const { createElement: h, Fragment } = require('react')
 const reactElementToJSXString = require('react-element-to-jsx-string')
-const markdown = require('../markdown')
+const { markdownToArray, markdownToJSX } = require('../markdown')
 
 describe('markdown', () => {
-  it('should render predictable result', () => {
+  it('markdownToArray unwrapped', () => {
+    deepStrictEqual(
+      markdownToArray('hello <%= name %>', { name: 'world' }),
+      ['hello world']
+    )
+  })
+
+  it('markdownToArray wrapped', () => {
+    deepStrictEqual(
+      markdownToArray(`hello
+
+<%= name %>`, { name: 'world' }),
+      [
+        { type: 'p', props: {}, children: ['hello'] },
+        '\n',
+        { type: 'p', props: {}, children: ['world'] }
+      ]
+    )
+  })
+
+  it('markdownToJSX', () => {
     strictEqual(
       /* @flowignore */
       reactElementToJSXString(
-        createElement(
-          Fragment,
-          null,
-          ...markdown(createElement, 'hello <%= name %>', { name: 'world' })
+        h(Fragment, null,
+          ...markdownToJSX(h, 'hello <%= name %>', { name: 'world' })
         )
       ),
-      `<>
-  <p>
-    hello world
-  </p>
-</>`
+      /* @flowignore */
+      reactElementToJSXString(
+        h(Fragment, null, 'hello world')
+      )
     )
   })
 })

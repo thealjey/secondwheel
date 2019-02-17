@@ -5,12 +5,10 @@ const ShallowRenderer = require('react-test-renderer/shallow')
 const reactElementToJSXString = require('react-element-to-jsx-string')
 
 /**
- * This represents any node that can be rendered in a React application.
- * `ReactNode` can be null, a boolean, a number, a string, a React element,
- * or an array of any of those types recursively.
+ * Elements are the smallest building blocks of React apps.
  *
- * @external ReactNode
- * @see {@link https://flow.org/en/docs/react/types/#toc-react-node|ReactNode}
+ * @external ReactElement
+ * @see {@link https://reactjs.org/docs/rendering-elements.html|ReactElement}
  */
 
 /**
@@ -23,8 +21,8 @@ const reactElementToJSXString = require('react-element-to-jsx-string')
  * {@link https://nodejs.org/api/assert.html#assert_assert_strictequal_actual_expected_message|assert.strictEqual}
  * to perform the assertion
  *
- * @param {ReactNode} actual
- * @param {ReactNode} expected
+ * @param {ReactElement} actual
+ * @param {ReactElement} expected
  * @param {string} [message]
  * @throws {AssertionError} test failure
  * @example
