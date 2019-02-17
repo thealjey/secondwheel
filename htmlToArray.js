@@ -13,8 +13,6 @@ const transform = require('lodash/transform')
 const { load } = require('cheerio')
 const template = require('./template')
 
-/** @namespace jsx */
-
 const msPattern = /^-ms-/
 
 const parseHTML = memoize(
@@ -76,39 +74,10 @@ const transformElements = (elements = []) =>
   )
 
 /**
- * converts an array of objects and strings to
- * {@link https://github.com/hyperhype/hyperscript|HyperScript}
- * compatible nodes
- *
- * @memberof jsx
- * @example
- * import { arrayToJSX } from 'secondwheel/jsx'
- *
- * // use with any HyperScript compatible framework
- * import { createElement as h } from 'react'
- * import { h } from 'preact'
- * import { h } from 'inferno-hyperscript'
- *
- * // render dynamic content without `dangerouslySetInnerHTML`
- * (<div>{arrayToJSX(h, <result of htmlToArray>)}</div>)
- */
-const arrayToJSX = (h/*: Function */, arr/*: Array<string | Object> */ = []) =>
-  map(
-    arr,
-    (el, key) =>
-      isString(el)
-        ? el
-        : h(el.type, { ...el.props, key }, ...arrayToJSX(h, el.children))
-  )
-
-exports.arrayToJSX = arrayToJSX
-
-/**
  * converts an html string to an array of plain objects and strings
  *
- * @memberof jsx
  * @example
- * import { htmlToArray } from 'secondwheel/jsx'
+ * import htmlToArray from 'secondwheel/htmlToArray'
  *
  * // stringify to transmit over the network, cache, etc.
  * const str = JSON.stringify(htmlToArray('<b>hello <%= name %></b>', { name: 'foo' }))
@@ -119,29 +88,4 @@ const htmlToArray = (
 )/*: Array<string | Object> */ =>
   transformElements(parseHTML(template(tpl, data)))
 
-exports.htmlToArray = htmlToArray
-
-/**
- * converts an html string to
- * {@link https://github.com/hyperhype/hyperscript|HyperScript}
- * compatible nodes
- *
- * @memberof jsx
- * @example
- * import { htmlToJSX } from 'secondwheel/jsx'
- *
- * // use with any HyperScript compatible framework
- * import { createElement as h } from 'react'
- * import { h } from 'preact'
- * import { h } from 'inferno-hyperscript'
- *
- * // bold text without `dangerouslySetInnerHTML`
- * (<div>{htmlToJSX(h, '<b>hello <%= name %></b>', { name: 'foo' })}</div>)
- */
-const htmlToJSX = (
-  h/*: Function */,
-  tpl/*: string */ = '',
-  data/*: Object */ = {}
-) => arrayToJSX(h, htmlToArray(tpl, data))
-
-exports.htmlToJSX = htmlToJSX
+module.exports = htmlToArray

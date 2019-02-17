@@ -3,7 +3,7 @@
 const { createElement: h } = require('react')
 const { readFileSync } = require('fs')
 const { join } = require('path')
-const { markdownToJSX } = require('../markdown')
+const markdownToJSX = require('../markdownToJSX')
 
 module.exports = () => {
   try {

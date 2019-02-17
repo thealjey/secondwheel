@@ -2,8 +2,15 @@ toc:
   - name: Templating
     children:
       - template
-      - markdown
-      - jsx
+      - name: markdown
+        children:
+          - markdownToArray
+          - markdownToJSX
+      - name: jsx
+        children:
+          - htmlToArray
+          - arrayToJSX
+          - htmlToJSX
   - name: Apollo/GraphQL
     children:
       - ApolloClient
