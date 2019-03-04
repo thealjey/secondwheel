@@ -27,6 +27,7 @@ toc:
       - matching
       - assert
       - assertArray
+      - assertString
   - name: Misc
     children:
       - cookie
