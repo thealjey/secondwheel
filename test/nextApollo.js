@@ -16,16 +16,16 @@ const testError = new Error('test error')
 const req = options => proxyquire('../nextApollo', options)
 
 describe('nextApollo', () => {
-  it('app', () => {
+  it('app', async () => {
     const nextApollo = req({})
     const MyApp = nextApollo(
       options => new ApolloClient(options),
       ctx => ({ test: 'test' })
     )(App)
-    renderToString(createElement(MyApp, { ...MyApp.getInitialProps({ Component, router: {} }), Component, router: {} }))
+    renderToString(createElement(MyApp, { ...(await MyApp.getInitialProps({ Component, router: {} })), Component, router: {} }))
   })
 
-  it('empty component', () => {
+  it('empty component', async () => {
     const error = stub(console, 'error')
 
     const nextApollo = req({
@@ -39,7 +39,7 @@ describe('nextApollo', () => {
       options => new ApolloClient(options),
       ctx => ({ test: 'test' })
     )(Component)
-    renderToString(createElement(MyApp, { ...MyApp.getInitialProps({ Component, router: {} }), Component, router: {} }))
+    renderToString(createElement(MyApp, { ...(await MyApp.getInitialProps({ Component, router: {} })), Component, router: {} }))
 
     ok(error.calledOnceWithExactly('Error while running `getDataFromTree`', testError))
 

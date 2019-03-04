@@ -45,12 +45,12 @@ import App from 'next/app'
  * }
  *
  * export default nextApollo(
- *   options => new ApolloClient({ uri: 'http://localhost:4000', ...options })
+ *   props => new ApolloClient({ uri: 'http://localhost:4000', ...props })
  * )(MyApp)
  */
 const nextApollo = (
-  getClient/*: (options: Object, ctx?: Object) => ApolloClient */,
-  getProps/*: (ctx: Object) => ?Object */ = noop
+  getClient/*: (props: Object, ctx?: Object) => ApolloClient */,
+  getProps/*: (ctx: Object) => ?Object | Promise<?Object> */ = noop
 ) => (app/*: App */) => class extends PureComponent/*:: <any> */ {
   /*:: client: ApolloClient; */
 
@@ -58,9 +58,9 @@ const nextApollo = (
     const { Component, router, ctx } = config
     const props = {
       ...(app.getInitialProps ? await app.getInitialProps(config) : {}),
-      ...getProps(ctx)
+      ...(await getProps(ctx))
     }
-    const client = getClient({}, ctx)
+    const client = getClient(props, ctx)
 
     if (isNode) {
       try {
@@ -79,7 +79,7 @@ const nextApollo = (
   constructor (props/*: Object */) {
     super(props)
 
-    this.client = getClient({ cache: props.cache })
+    this.client = getClient(props)
   }
 
   render () {
