@@ -8,10 +8,7 @@ const pick = require('lodash/pick')
 
 /**
  * The `req` object represents the HTTP request and has properties for the
- * request query string, parameters, body, HTTP headers, and so on. In this
- * documentation and by convention, the object is always referred to as `req`
- * (and the HTTP response is `res`) but its actual name is determined by the
- * parameters to the callback function in which you’re working.
+ * request query string, parameters, body, HTTP headers, and so on.
  *
  * @external Request
  * @see {@link http://expressjs.com/en/4x/api.html#req|Request}
@@ -20,10 +17,6 @@ const pick = require('lodash/pick')
 /**
  * The `res` object represents the HTTP response that an Express app sends when
  * it gets an HTTP request.
- *
- * In this documentation and by convention, the object is always referred to as
- * `res` (and the HTTP request is `req`) but its actual name is determined by
- * the parameters to the callback function in which you’re working.
  *
  * @external Response
  * @see {@link http://expressjs.com/en/4x/api.html#res|Response}

@@ -14,6 +14,6 @@ describe('md5', () => {
   it('browser', () => {
     const md5 = proxyquire('../md5', { './constants': { isNode: false } })
 
-    strictEqual(md5('43'), '17e62166fc8586dfa4d1bc0e1742c08b')
+    strictEqual(md5(), 'd41d8cd98f00b204e9800998ecf8427e')
   })
 })

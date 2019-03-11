@@ -2,16 +2,20 @@
 
 const { createElement: h, Fragment } = require('react')
 const map = require('lodash/map')
+const has = require('lodash/has')
 const get = require('lodash/get')
 const trim = require('lodash/trim')
 const replace = require('lodash/replace')
 const join = require('lodash/join')
 const slug = require('../slug')
 const { LinkerStack, createFormatters } = require('documentation').util
-const { highlight, languages: { javascript } } = require('prismjs')
+const prismjs = require('prismjs')
+
+require('prismjs/components/')()
 
 let linkerStack
 let formatters
+const pattern = /^\((\w+)\)\s*([\s\S]*)/
 
 const getLinkerStack = (comments, options) =>
   linkerStack ||
@@ -42,6 +46,16 @@ const link = (text, comments, options) =>
 const formatType = (type, comments, options) =>
   getFormatters(comments, options).type(type)
 
+const inferLanguage = text => {
+  const [, language = 'flow', code = text] = text.match(pattern) || []
+
+  if (has(prismjs.languages, language)) {
+    return { language, code }
+  }
+
+  return { language: 'flow', code: text }
+}
+
 const Section = ({ title, content }) =>
   content.length
     ? h(Fragment, null,
@@ -63,9 +77,9 @@ const Parameters = ({ title, content, comments, options }) =>
 
               return replace(
                 replace(
-                  highlight(
+                  prismjs.highlight(
                     `${name || ''}${name ? ': ' : ''}PlaceholderPrismType${defaultVal ? ' = ' : ''}${defaultVal || ''}${desc.length ? ' // PlaceholderPrismDescription' : ''}`,
-                    javascript,
+                    prismjs.languages.flow,
                     'flow'
                   ),
                   'PlaceholderPrismType',
@@ -97,16 +111,19 @@ const Content = ({ comments, options }/*: Object */) =>
             desc ? h('div', { dangerouslySetInnerHTML: { __html: desc } }) : null,
             h(Section, {
               title: 'Examples',
-              content: map(examples, ({ description }, key) =>
-                h('pre', { className: 'language-flow' },
+              content: map(examples, ({ description }, key) => {
+                const { language, code } = inferLanguage(description)
+                const className = `language-${language}`
+
+                return h('pre', { className },
                   h('code', {
-                    className: 'language-flow',
+                    className,
                     dangerouslySetInnerHTML: {
-                      __html: highlight(description, javascript, 'flow')
+                      __html: prismjs.highlight(code, prismjs.languages[language], language)
                     }
                   })
                 )
-              )
+              })
             }),
             h(Section, {
               title: 'Extends',

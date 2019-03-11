@@ -1,12 +1,9 @@
 /* @flow */
 
-const get = require('lodash/get')
+const has = require('lodash/has')
+const g = require('global')
 
 /** @namespace constants */
-
-const g = typeof global === 'undefined'
-  ? (typeof window === 'undefined' ? {} : window)
-  : global
 
 /**
  * truthy when running in Node.js
@@ -21,7 +18,7 @@ const g = typeof global === 'undefined'
  *   // not Node.js
  * }
  */
-const isNode = exports.isNode = get(g, 'process.versions.node')
+const isNode = exports.isNode = has(g, 'process.versions.node')
 
 /**
  * truthy when running in a browser
@@ -36,7 +33,7 @@ const isNode = exports.isNode = get(g, 'process.versions.node')
  *   // not browser
  * }
  */
-exports.isBrowser = !isNode && get(g, 'document')
+exports.isBrowser = !isNode && has(g, 'document')
 
 /**
  * contains `WebSocket` or `MozWebSocket` from the global scope if available

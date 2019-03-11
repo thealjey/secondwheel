@@ -5,6 +5,10 @@ const { deepStrictEqual } = require('assert')
 const htmlToArray = require('../htmlToArray')
 
 describe('htmlToArray', () => {
+  it('optional input', () => {
+    deepStrictEqual(htmlToArray(), [])
+  })
+
   it('should return predictable result', () => {
     deepStrictEqual(
       htmlToArray('<input checked value="a" /><textarea style="background-color: red; -ms-transition: all 4s ease;">b</textarea>'),

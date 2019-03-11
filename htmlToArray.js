@@ -67,7 +67,7 @@ const transformElement = ({
   return { type, props, children }
 }
 
-const transformElements = (elements = []) =>
+const transformElements = elements =>
   map(
     reject(elements, ['type', 'comment']),
     el => el.type === 'text' ? el.data : transformElement(el)

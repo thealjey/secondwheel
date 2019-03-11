@@ -28,11 +28,16 @@ describe('subscription', () => {
       data
     )
     deepStrictEqual(
+      subscription.updated(data, 'wrong', { mutation: 'UPDATED', node }),
+      data
+    )
+    deepStrictEqual(
       subscription.updated(data, 'path.to.list', { mutation: 'UPDATED', node }),
       { path: { to: { list: [{ id: 5, value: 'new' }] } } }
     )
     deepStrictEqual(
-      subscription.updated(data, 'path.to.list', { mutation: 'UPDATED', node: [node] }),
+      subscription.updated(data, 'path.to.list',
+        { mutation: 'UPDATED', node: [node, { id: 6, value: 'new' }] }),
       { path: { to: { list: [{ id: 5, value: 'new' }] } } }
     )
   })

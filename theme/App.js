@@ -6,9 +6,9 @@ const Navigation = require('./Navigation')
 const Frontpage = require('./Frontpage')
 const Content = require('./Content')
 
-module.exports = ({ comments, options }/*: Object */) =>
+module.exports = ({ comments, options, svg }/*: Object */) =>
   h(Fragment, null,
-    h(Header, { options }),
+    h(Header, { options, svg }),
     h('aside', null,
       h(Navigation, { comments })
     ),

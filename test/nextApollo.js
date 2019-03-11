@@ -17,10 +17,9 @@ const req = options => proxyquire('../nextApollo', options)
 
 describe('nextApollo', () => {
   it('app', async () => {
-    const nextApollo = req({})
+    const nextApollo = req({ './constants': { isNode: false } })
     const MyApp = nextApollo(
-      options => new ApolloClient(options),
-      ctx => ({ test: 'test' })
+      options => new ApolloClient(options)
     )(App)
     renderToString(createElement(MyApp, { ...(await MyApp.getInitialProps({ Component, router: {} })), Component, router: {} }))
   })

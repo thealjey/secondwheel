@@ -5,10 +5,11 @@ const { strictEqual } = require('assert')
 const slug = require('../slug')
 
 describe('slug', () => {
+  it('optional parameter', () => {
+    strictEqual(slug(), '')
+  })
+
   it('should return predictable result', () => {
-    strictEqual(
-      slug('hello world'),
-      'hello-world'
-    )
+    strictEqual(slug('hello world'), 'hello-world')
   })
 })

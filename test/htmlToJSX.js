@@ -7,6 +7,21 @@ const { createElement: h, Fragment } = require('react')
 const reactElementToJSXString = require('react-element-to-jsx-string')
 
 describe('htmlToJSX', () => {
+  it('optional parameters', () => {
+    strictEqual(
+      /* @flowignore */
+      reactElementToJSXString(
+        h(Fragment, null,
+          ...htmlToJSX(h)
+        )
+      ),
+      /* @flowignore */
+      reactElementToJSXString(
+        h(Fragment, null)
+      )
+    )
+  })
+
   it('should return predictable result', () => {
     strictEqual(
       /* @flowignore */

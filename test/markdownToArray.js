@@ -5,6 +5,10 @@ const { deepStrictEqual } = require('assert')
 const markdownToArray = require('../markdownToArray')
 
 describe('markdownToArray', () => {
+  it('optional parameters', () => {
+    deepStrictEqual(markdownToArray(), [])
+  })
+
   it('unwrapped', () => {
     deepStrictEqual(
       markdownToArray('hello <%= name %>', { name: 'world' }),

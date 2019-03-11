@@ -17,8 +17,8 @@ const tail = require('lodash/tail')
 /**
  * {@link cookie} configuration options
  * @typedef {Object} SubscriptionPayload
- * @param {'CREATED' | 'UPDATED' | 'DELETED'} mutation
- * @param {Object | Object[]} node
+ * @property {'CREATED' | 'UPDATED' | 'DELETED'} mutation
+ * @property {Object | Object[]} node
  * @example
  * import type { SubscriptionPayload } from 'secondwheel/subscription'
  */

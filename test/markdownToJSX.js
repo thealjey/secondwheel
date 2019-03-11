@@ -7,6 +7,21 @@ const reactElementToJSXString = require('react-element-to-jsx-string')
 const markdownToJSX = require('../markdownToJSX')
 
 describe('markdownToJSX', () => {
+  it('optional parameters', () => {
+    strictEqual(
+      /* @flowignore */
+      reactElementToJSXString(
+        h(Fragment, null,
+          ...markdownToJSX(h)
+        )
+      ),
+      /* @flowignore */
+      reactElementToJSXString(
+        h(Fragment, null)
+      )
+    )
+  })
+
   it('should render predictable result', () => {
     strictEqual(
       /* @flowignore */

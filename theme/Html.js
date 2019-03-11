@@ -3,7 +3,7 @@
 const { createElement: h } = require('react')
 const App = require('./App')
 
-module.exports = ({ comments, options }/*: Object */) =>
+module.exports = ({ comments, options, svg }/*: Object */) =>
   h('html', { lang: 'en' },
     h('head', null,
       h('meta', { charSet: 'utf-8' }),
@@ -23,6 +23,7 @@ module.exports = ({ comments, options }/*: Object */) =>
         integrity: 'sha256-/Kfdz9pXGPe+bFF+TtxHqbg6F9c3Rb0jN48uy+2b/do=',
         crossOrigin: 'anonymous'
       }),
+      options.favicon ? h('link', { rel: 'icon', href: 'favicon.ico' }) : null,
       h('style', { dangerouslySetInnerHTML: { __html: `
 #app {
   height: 100vh;
@@ -48,11 +49,12 @@ section > .section-link { font-size: 1.5em; }
 section { margin-bottom: .5em; }
 h4 { font-size: 1.1em; margin-top: 1.2em; font-weight: 400; }
 code { white-space: pre; }
+.navbar-brand svg { height: 2.5rem; margin-right: 1rem; }
 ` } }),
-      h('title', null, options['project-name'], ' - Documentation')
+      h('title', null, options['project-name'], ' documentation')
     ),
     h('body', null,
-      h('div', { id: 'app' }, h(App, { comments, options })),
+      h('div', { id: 'app' }, h(App, { comments, options, svg })),
       h('script', { dangerouslySetInnerHTML: { __html: `
 var links = Array.from(document.getElementsByClassName('js-link'))
 var jumbotron = document.getElementsByClassName('jumbotron')[0]

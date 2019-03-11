@@ -5,8 +5,6 @@ const { AssertionError } = require('assert')
 
 /**
  * A subclass of {@link Error} that indicates the failure of an assertion.
- * All errors thrown by the assert module will be instances of the
- * `AssertionError` class.
  *
  * @external AssertionError
  * @see {@link https://nodejs.org/api/assert.html#assert_class_assert_assertionerror|AssertionError}

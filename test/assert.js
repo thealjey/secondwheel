@@ -6,7 +6,7 @@ const { strictEqual } = require('assert')
 
 describe('assert', () => {
   it('should not throw', () => {
-    assert(100, value => value < 1000)
+    assert(true)
   })
 
   it('should throw', () => {

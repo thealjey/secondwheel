@@ -7,6 +7,10 @@ const { createElement: h, Fragment } = require('react')
 const reactElementToJSXString = require('react-element-to-jsx-string')
 
 describe('arrayToJSX', () => {
+  it('test default', () => {
+    strictEqual(arrayToJSX(h).length, 0)
+  })
+
   it('should return predictable result', () => {
     strictEqual(
       /* @flowignore */

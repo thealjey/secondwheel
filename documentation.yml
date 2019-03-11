@@ -30,14 +30,25 @@ toc:
       - assertString
   - name: Misc
     children:
+      - env
       - cookie
       - constants
       - name: theme
         description: |
           a [documentation.js](http://documentation.js.org/) theme used to
-          generate this documentation
-          <br />
-          <br />
+          generate this documentation<br><br>
+
+          Extends the [@example](http://usejsdoc.org/tags-example.html) jsdoc
+          tag to support a language modifier (e.g. `@example(scss)`).<br>
+          If a modifier is omitted or is not supported the language defaults to
+          `'flow'`.<br>
+          Follow [this link](https://prismjs.com/#languages-list) to see the
+          full list of supported languages.
+
+          The `--favicon` option must be a path to an SVG file, which will be
+          rendered in the header bar as well as automatically compiled to an ICO
+          file and used as a favicon.
+
           *Example usage*
 
           1. install this package - `yarn add secondwheel`
@@ -50,6 +61,8 @@ toc:
           <span class="token punctuation">}</span></code></pre>
   - name: Types
     children:
+      - EnvOptions
+      - EnvError
       - AssertionError
       - ReactElement
       - ApolloLink
