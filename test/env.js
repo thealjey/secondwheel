@@ -46,7 +46,10 @@ describe('env', () => {
 
     const log = stub(console, 'log')
 
-    env({ path: join(__dirname, 'fixture', '.env.valid') })
+    env({
+      path: join(__dirname, 'fixture', '.env.valid'),
+      example: join(__dirname, 'fixture', '.env.example')
+    })
 
     ok(!log.called)
 
@@ -58,6 +61,7 @@ describe('env', () => {
 
     env({
       path: join(__dirname, 'fixture', '.env.valid'),
+      example: join(__dirname, 'fixture', '.env.example'),
       debug: true
     })
 

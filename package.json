@@ -4,7 +4,7 @@
   "author": "Eugene Kuzmenko",
   "license": "MIT",
   "scripts": {
-    "test": "flow && standard *.js test/*.js && nyc mocha -t 10000 -b -R min --exit",
+    "test": "flow && standard *.js test/*.js && nyc mocha -t 10000 -R min --exit",
     "docs": "documentation build *.js -f html -c documentation.yml --np --project-name secondwheel --project-homepage https://github.com/thealjey/secondwheel --favicon favicon.svg -t theme -o docs",
     "semantic-release": "semantic-release",
     "cz": "git-cz"
@@ -31,8 +31,8 @@
     "apollo-link-ws": "^1.0.15",
     "apollo-utilities": "^1.2.1",
     "cheerio": "^1.0.0-rc.2",
-    "documentation": "^9.3.0",
-    "dotenv": "^6.2.0",
+    "documentation": "^9.3.1",
+    "dotenv": "^7.0.0",
     "github-slugger": "^1.2.1",
     "global": "^4.3.2",
     "graphql": "^14.1.1",

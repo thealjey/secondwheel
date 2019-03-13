@@ -40,17 +40,6 @@ const interpolate = (value, parsed, missing) =>
     return interpolate(process.env[key] || parsed[key] || '', parsed, missing)
   })
 
-const parseFile = (
-  file/*: string */,
-  options/*: EnvOptions */
-) => {
-  try {
-    return parse(readFileSync(file), options)
-  } catch (error) {
-    return {}
-  }
-}
-
 class EnvError extends Error {
   /*:: missing: Set<string>; */
 
@@ -95,10 +84,10 @@ const env = (options/*: ?EnvOptions */) => {
     ...options
   }
   const { path, example, debug } = config
-  const parsed = parseFile(path, config)
+  const parsed = parse(readFileSync(path), config)
   const missing = new Set(
     pull(
-      keys(parseFile(example, config)),
+      keys(parse(readFileSync(example), config)),
       ...keys(parsed),
       ...keys(process.env)
     )
