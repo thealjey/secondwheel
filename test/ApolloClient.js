@@ -4,8 +4,7 @@ const { describe, it, before } = require('mocha')
 const proxyquire = require('proxyquire')
 const constant = require('lodash/constant')
 const identity = require('lodash/identity')
-const { strictEqual, deepStrictEqual, ok } = require('assert')
-const { stub } = require('sinon')
+const { strictEqual, deepStrictEqual } = require('assert')
 
 let ApolloClient
 
@@ -74,11 +73,7 @@ describe('ApolloClient', () => {
       )
       const onError = ApolloClient.createErrorLink({})
 
-      const log = stub(console, 'log')
-
       onError({})
-
-      ok(!log.called)
 
       onError({
         graphQLErrors: [
@@ -86,12 +81,6 @@ describe('ApolloClient', () => {
         ],
         networkError: 'networkError'
       })
-
-      ok(log.calledTwice)
-      ok(log.calledWithExactly('[GraphQL error]: Message: message, Location: locations, Path: path'))
-      ok(log.calledWithExactly('[Network error]: networkError'))
-
-      log.restore()
     })
 
     it('webSocketImpl', () => {

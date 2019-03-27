@@ -10,26 +10,8 @@ const { WebSocketLink } = require('apollo-link-ws')
 const { getMainDefinition } = require('apollo-utilities')
 const { InMemoryCache } = require('apollo-cache-inmemory')
 const compact = require('lodash/compact')
+const noop = require('lodash/noop')
 const { NativeWebSocket, isNode } = require('./constants')
-
-const defaultWSOptions = { reconnect: true }
-
-const testOperation = ({ query }) => {
-  const { kind, operation } = getMainDefinition(query)
-
-  return kind === 'OperationDefinition' && operation === 'subscription'
-}
-
-const defaultErrorCallback = ({ graphQLErrors, networkError }) => {
-  if (graphQLErrors) {
-    graphQLErrors.map(({ message: m, locations: l, path: p }) => console.log(
-      `[GraphQL error]: Message: ${m}, Location: ${l}, Path: ${p}`
-    ))
-  }
-  if (networkError) {
-    console.log(`[Network error]: ${networkError}`)
-  }
-}
 
 /*::
 import ApolloLink from 'apollo-link'
@@ -151,31 +133,81 @@ class ApolloClient extends Client {
     })
   }
 
-  /** creates the final instance of ApolloLink */
-  static createLink (options/*: ApolloClientOptions */)/*: ApolloLink */ {
-    const httpLink = ApolloClient.createHttpLink(options)
-    const wsLink = ApolloClient.createWSLink(options)
+  static testOperation ({ query }/*: Object */) {
+    const { kind, operation } = getMainDefinition(query)
 
-    return wsLink ? split(testOperation, wsLink, httpLink) : httpLink
+    return kind === 'OperationDefinition' && operation === 'subscription'
   }
 
-  /** creates an instance of ApolloCache */
+  /**
+   * creates the final instance of ApolloLink
+   *
+   * @example
+   * // override to a default behaviour (will have no effect)
+   * import { split } from 'apollo-link'
+   *
+   * ApolloClient.createLink = options => {
+   *   const wsLink = ApolloClient.createWSLink(options)
+   *   const httpLink = ApolloClient.createHttpLink(options)
+   *
+   *   return wsLink ? split(ApolloClient.testOperation, wsLink, httpLink) : httpLink
+   * }
+   */
+  static createLink (options/*: ApolloClientOptions */)/*: ApolloLink */ {
+    const wsLink = ApolloClient.createWSLink(options)
+    const httpLink = ApolloClient.createHttpLink(options)
+
+    return wsLink ? split(ApolloClient.testOperation, wsLink, httpLink) : httpLink
+  }
+
+  /**
+   * creates an instance of ApolloCache
+   *
+   * @example
+   * // override to a default behaviour (will have no effect)
+   * import { InMemoryCache } from 'apollo-cache-inmemory'
+   *
+   * ApolloClient.createCache = ({ cache = {} }) => new InMemoryCache().restore(cache)
+   */
   static createCache (options/*: ApolloClientOptions */)/*: ApolloCache */ {
     const { cache = {} } = options
 
     return new InMemoryCache().restore(cache)
   }
 
-  /** creates an instance of ApolloLink */
+  /**
+   * creates an instance of ApolloLink
+   *
+   * @example
+   * // override to a default behaviour (will have no effect)
+   * import { from } from 'apollo-link'
+   * import compact from 'lodash/compact'
+   *
+   * ApolloClient.createHttpLink = options => from(compact(ApolloClient.getLinks(options)))
+   */
   static createHttpLink (options/*: ApolloClientOptions */)/*: ApolloLink */ {
     return from(compact(ApolloClient.getLinks(options)))
   }
 
-  /** creates an instance of WebSocketLink */
+  /**
+   * creates an instance of WebSocketLink
+   *
+   * @example
+   * // override to a default behaviour (will have no effect)
+   * import { NativeWebSocket } from 'secondwheel/constants'
+   * import { WebSocketLink } from 'apollo-link-ws'
+   *
+   * ApolloClient.createWSLink = ({ wsUri, wsOptions = { reconnect: true }, webSocketImpl = NativeWebSocket }) =>
+   *   wsUri && webSocketImpl && new WebSocketLink({
+   *     uri: wsUri,
+   *     options: wsOptions,
+   *     webSocketImpl
+   *   })
+   */
   static createWSLink (options/*: ApolloClientOptions */)/*: ?ApolloLink */ {
-    const { wsUri, wsOptions = defaultWSOptions, webSocketImpl } = options
+    const { wsUri, wsOptions = { reconnect: true }, webSocketImpl = NativeWebSocket } = options
 
-    return wsUri && (webSocketImpl || NativeWebSocket) && new WebSocketLink({
+    return wsUri && webSocketImpl && new WebSocketLink({
       uri: wsUri,
       options: wsOptions,
       webSocketImpl
@@ -185,6 +217,14 @@ class ApolloClient extends Client {
   /**
    * returns an array of ApolloLink to be used in the creation of the final link
    * falsy values are filtered out
+   *
+   * @example
+   * // override to a default behaviour (will have no effect)
+   * ApolloClient.getLinks = options => [
+   *   ApolloClient.createErrorLink(options),
+   *   ApolloClient.createRetryLink(options),
+   *   ApolloClient.createBatchLink(options)
+   * ]
    */
   static getLinks (options/*: ApolloClientOptions */)/*: Array<?ApolloLink> */ {
     return [
@@ -194,21 +234,71 @@ class ApolloClient extends Client {
     ]
   }
 
-  /** creates an instance of ErrorLink */
+  /**
+   * creates an instance of ErrorLink
+   *
+   * @example
+   * // override to a default behaviour (will have no effect)
+   * import noop from 'lodash/noop'
+   * import { onError } from 'apollo-link-error'
+   *
+   * ApolloClient.createErrorLink = ({ onError: errorCallback = noop }) => onError(errorCallback)
+   */
   static createErrorLink (options/*: ApolloClientOptions */)/*: ?ApolloLink */ {
-    const { onError: errorCallback = defaultErrorCallback } = options
+    const { onError: errorCallback = noop } = options
 
     return onError(errorCallback)
   }
 
-  /** creates an instance of RetryLink */
+  /**
+   * creates an instance of RetryLink
+   *
+   * @example
+   * // override to a default behaviour (will have no effect)
+   * import { RetryLink } from 'apollo-link-retry'
+   *
+   * ApolloClient.createRetryLink = ({ delay, attempts }) => new RetryLink({ delay, attempts })
+   */
   static createRetryLink (options/*: ApolloClientOptions */)/*: ?ApolloLink */ {
     const { delay, attempts } = options
 
     return new RetryLink({ delay, attempts })
   }
 
-  /** creates an instance of HttpLink */
+  /**
+   * creates an instance of HttpLink
+   *
+   * @example
+   * // override to a default behaviour (will have no effect)
+   * import { isNode } from 'secondwheel/constants'
+   * import { BatchHttpLink } from 'apollo-link-batch-http'
+   *
+   * ApolloClient.createBatchLink = ({
+   *   uri = '/graphql',
+   *   browserUri = uri,
+   *   serverUri = browserUri,
+   *   includeExtensions,
+   *   headers = {},
+   *   credentials = 'same-origin',
+   *   fetchOptions = {},
+   *   useGETForQueries,
+   *   batchMax,
+   *   batchInterval,
+   *   batchKey
+   * }) =>
+   *   new BatchHttpLink({
+   *     uri: isNode ? serverUri : browserUri,
+   *     includeExtensions,
+   *     fetch,
+   *     headers,
+   *     credentials,
+   *     fetchOptions,
+   *     useGETForQueries,
+   *     batchMax,
+   *     batchInterval,
+   *     batchKey
+   *   })
+   */
   static createBatchLink (options/*: ApolloClientOptions */)/*: ?ApolloLink */ {
     const {
       uri = '/graphql',
